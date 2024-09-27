@@ -10,6 +10,8 @@ class Booking(models.Model):
 
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    address = models.CharField(max_length = 500)
     room_type = models.CharField(choices=ROOM_CHOICES, max_length=20)
     check_in = models.DateField()
     check_out = models.DateField()

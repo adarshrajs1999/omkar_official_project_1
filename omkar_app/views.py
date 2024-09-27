@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from .forms import BookingForm
 from django.conf import settings
 import razorpay
-
 from .models import Booking
+
+def home(request):
+    return render(request,'home.html')
 
 
 def booking_view(request):
