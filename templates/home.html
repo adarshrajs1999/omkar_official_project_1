@@ -2,794 +2,619 @@
 <html lang="en">
 {% load static %}
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Rentiz - Real Estate Free Website Template</title>
-
-  <link rel="stylesheet" type="text/css" href=" {% static 'css/vendor.css' %} ">
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-
-  <!-- Link Bootstrap's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <link rel="stylesheet" href=" {% static 'style.css' %} ">
-
-  <!-- Google Fonts ================================================== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- script ================================================== -->
-  <script src=" {% static 'js/modernizr.js' %} "></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+	<title>Radisson Hotel</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/popup/magnific-popup.css' %}">
+	<!-- main css -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
-
-  <!-- nav bar start  -->
-  <header id="nav" class="site-header position-fixed text-white bg-dark">
-    <nav id="navbar-example2" class="navbar navbar-expand-lg py-2">
-
-      <div class="container ">
-
-        <a class="navbar-brand" href=" {% static './index.html' %} "><img src=" {% static 'images/logo.png' %} " alt="image"></a>
-
-
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon
-            name="menu-outline" style="font-size: 30px;"></ion-icon></button>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2"
-          aria-labelledby="offcanvasNavbar2Label">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav align-items-center justify-content-end align-items-center flex-grow-1 ">
-              <li class="nav-item">
-                <a class="nav-link active me-md-4" href=" {% static '#billboard' %} ">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href=" {% static '#residence' %} ">Properties</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href=" {% static '#about-us' %} ">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href=" {% static '#help' %} ">Contact</a>
-              </li>
-              <li class="nav-item dropdown ">
-                <a class="nav-link me-md-4 text-center dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">About</a>
-                  </li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Blog</a>
-                  </li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Blog-Single <span
-                        class="badge bg-secondary">PRO</span></a></li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Properties <span
-                        class="badge bg-secondary">PRO</span></a></li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Property-Single <span
-                        class="badge bg-secondary">PRO</span></a></li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Contact <span
-                        class="badge bg-secondary">PRO</span></a></li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Review <span
-                        class="badge bg-secondary">PRO</span></a></li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Agents</a>
-                  </li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">FAQs</a>
-                  </li>
-                  <li><a href=" {% static 'index.html' %} " class="dropdown-item">Styles</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-md-4" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
-              </li>
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="tabs-listing mt-4">
-                        <nav>
-                          <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab" role="tablist">
-                            <button class="btn btn-outline-primary text-uppercase me-3 active" id="nav-sign-in-tab"
-                              data-bs-toggle="tab" data-bs-target="#nav-sign-in" type="button" role="tab"
-                              aria-controls="nav-sign-in" aria-selected="true">Log In</button>
-                            <button class="btn btn-outline-primary text-uppercase" id="nav-register-tab"
-                              data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab"
-                              aria-controls="nav-register" aria-selected="false">Sign Up</button>
-                          </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                          <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
-                            aria-labelledby="nav-sign-in-tab">
-                            <form id="form1" class="form-group flex-wrap p-3 ">
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="exampleInputEmail1"
-                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
-                                  Address</label>
-                                <input type="text" id="exampleInputEmail1" name="email" placeholder="Email"
-                                  class="form-control ps-3">
-                              </div>
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="inputPassword1"
-                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
-                                <input type="password" id="inputPassword1" placeholder="Password"
-                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
-                                <div id="passwordHelpBlock" class="form-text text-center">
-                                  <a href="#" class=" password">Forgot Password ?</a>
-                                </div>
-
-                              </div>
-                              <label class="py-3">
-                                <input type="checkbox" required="" class="d-inline">
-                                <span class="label-body text-black">Remember Me</span>
-                              </label>
-                              <div class="d-grid my-3">
-                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
-                                  In</button>
-                              </div>
-                            </form>
-                          </div>
-                          <div class="tab-pane fade" id="nav-register" role="tabpanel"
-                            aria-labelledby="nav-register-tab">
-                            <form id="form2" class="form-group flex-wrap p-3 ">
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="exampleInputEmail2"
-                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
-                                  Address</label>
-                                <input type="text" id="exampleInputEmail2" name="email" placeholder="Email"
-                                  class="form-control ps-3">
-                              </div>
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="inputPassword2"
-                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
-                                <input type="password" id="inputPassword2" placeholder="Password"
-                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
-                              </div>
-                              <label class="py-3">
-                                <input type="checkbox" required="" class="d-inline">
-                                <span class="label-body text-black">I agree to the <a href="#"
-                                    class="text-black password border-bottom">Privacy Policy</a>
-                                </span>
-                              </label>
-                              <div class="d-grid my-3">
-                                <button
-                                  class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
-                                  Up</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <li class="nav-item">
-                <a class="btn-medium btn btn-primary" href="#" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal2">Sign Up</a>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="tabs-listing mt-4">
-                        <nav>
-                          <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab2" role="tablist">
-                            <button class="btn btn-outline-primary text-uppercase me-4 " id="nav-sign-in-tab2"
-                              data-bs-toggle="tab" data-bs-target="#nav-sign-in2" type="button" role="tab"
-                              aria-controls="nav-sign-in2" aria-selected="false">Log In</button>
-                            <button class="btn btn-outline-primary text-uppercase active" id="nav-register-tab2"
-                              data-bs-toggle="tab" data-bs-target="#nav-register2" type="button" role="tab"
-                              aria-controls="nav-register2" aria-selected="true">Sign Up</button>
-                          </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent1">
-                          <div class="tab-pane fade " id="nav-sign-in2" role="tabpanel"
-                            aria-labelledby="nav-sign-in-tab2">
-                            <form id="form3" class="form-group flex-wrap p-3 ">
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="exampleInputEmail3"
-                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
-                                  Address</label>
-                                <input type="text" id="exampleInputEmail3" name="email" placeholder="Email"
-                                  class="form-control ps-3">
-                              </div>
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="inputPassword3"
-                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
-                                <input type="password" id="inputPassword3" placeholder="Password"
-                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
-                                <div id="passwordHelpBlock2" class="form-text text-center">
-                                  <a href="#" class=" password">Forgot Password ?</a>
-                                </div>
-
-                              </div>
-                              <label class="py-3">
-                                <input type="checkbox" required="" class="d-inline">
-                                <span class="label-body text-black">Remember Me</span>
-                              </label>
-                              <div class="d-grid my-3">
-                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
-                                  In</button>
-                              </div>
-                            </form>
-                          </div>
-                          <div class="tab-pane fade active show" id="nav-register2" role="tabpanel"
-                            aria-labelledby="nav-register-tab2">
-                            <form id="form4" class="form-group flex-wrap p-3 ">
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="exampleInputEmail4"
-                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
-                                  Address</label>
-                                <input type="text" id="exampleInputEmail4" name="email" placeholder="Email"
-                                  class="form-control ps-3">
-                              </div>
-                              <div class="form-input col-lg-12 my-4">
-                                <label for="inputPassword4"
-                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
-                                <input type="password" id="inputPassword4" placeholder="Password"
-                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
-                              </div>
-                              <label class="py-3">
-                                <input type="checkbox" required="" class="d-inline">
-                                <span class="label-body text-black">I agree to the <a href="#"
-                                    class="text-black password border-bottom">Privacy Policy</a>
-                                </span>
-                              </label>
-                              <div class="d-grid my-3">
-                                <button
-                                  class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
-                                  Up</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ul>
-
-          </div>
-        </div>
-
-
-      </div>
-    </nav>
-  </header>
-
-  <!-- billboard start  -->
-  <section id="billboard">
-    <div class="container ">
-      <div class="row flex-lg-row-reverse align-items-center ">
-
-        <div class="col-lg-6">
-          <img src=" {% static 'images/billboard.png' %} " class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
-            height="500" loading="lazy">
-        </div>
-
-        <div class="col-lg-6">
-          <h1 class=" text-capitalize  lh-1 my-3">Perfect way to buy and sell a home</h1>
-          <p class="lead">Diam vitae, nec mattis lectus quam pretium amet facilisis. Urna, massa aliqua dui
-            pellentesque. Ac, gravida in eget non amet eget purus non.</p>
-          <nav class="navbar navbar-expand-lg billboard-nav">
-            <div class="container billboard-search p-0">
-
-              <div class="row billboard-row">
-                <div class="col-lg-3 billboard-select">
-                  <select class="form-select mb-2 mb-lg-0" aria-label="Purpose">
-                    <option selected>Purpose</option>
-                    <option value="1">Buy</option>
-                    <option value="2">Rent</option>
-                    <option value="3">Sell</option>
-                    <option value="4">Something else here</option>
-
-                  </select>
-                </div>
-                <div class="col-lg-3 billboard-select">
-                  <select class="form-select mb-2 mb-lg-0" aria-label="Location">
-                    <option selected>Location</option>
-                    <option value="1">Texas</option>
-                    <option value="2">Miami</option>
-                    <option value="3">Chicago</option>
-                    <option value="4">New York</option>
-                    <option value="5">Something else here</option>
-                  </select>
-                </div>
-                <div class="col-lg-3 billboard-select">
-                  <select class="form-select mb-2 mb-lg-0" aria-label="Type">
-                    <option selected>Type</option>
-                    <option value="1">House</option>
-                    <option value="2">Appartment</option>
-                    <option value="3">Villa</option>
-                    <option value="4">Loft</option>
-                    <option value="5">Bungalow</option>
-                    <option value="3">Something else here</option>
-                  </select>
-                </div>
-
-                <div class="col-lg-3 billboard-btn">
-                  <button type="submit" class="btn btn-primary btn-lg billboard-search">Search</button>
-                </div>
-              </div>
-
-
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature start  -->
-  <section id="feature">
-    <div class="container py-5">
-      <div class="row">
-        <div class="section-header align-center mb-5">
-          <h2 class=" text-capitalize m-0">Featured In</h2>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-between">
-        <div class="col-md-2 ">
-          <div class="my-3" role="group" aria-label="3 / 7" style="width: 158.667px; margin-right: 20px;"><img
-              alt="image" src=" {% static 'images/logo1.png' %} "></div>
-        </div>
-        <div class="col-md-2">
-          <div class="my-3" role="group" aria-label="3 / 7" style="width: 158.667px; margin-right: 20px;"><img
-              alt="image" src=" {% static 'images/logo2.png' %} "></div>
-        </div>
-        <div class="col-md-2">
-          <div class="my-3" role="group" aria-label="3 / 7" style="width: 158.667px; margin-right: 20px;"><img
-              alt="image" src=" {% static 'images/logo3.png' %} "></div>
-        </div>
-        <div class="col-md-2">
-          <div class="my-3" role="group" aria-label="3 / 7" style="width: 158.667px; margin-right: 20px;"><img
-              alt="image" src=" {% static 'images/logo4.png' %} "></div>
-        </div>
-        <div class="col-md-2">
-          <div class="my-3" role="group" aria-label="3 / 7" style="width: 158.667px; margin-right: 20px;"><img
-              alt="image" src=" {% static 'images/logo6.png' %} "></div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Residence start  -->
-  <section id="residence">
-    <div class="container  my-5 py-5">
-      <h2 class="text-capitalize m-0 py-lg-5">Popular Residence</h2>
-
-      <div class="swiper-button-next residence-swiper-next  residence-arrow"></div>
-      <div class="swiper-button-prev residence-swiper-prev residence-arrow"></div>
-
-      <div class="swiper residence-swiper">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item15.png' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item16.png' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item17.png' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item1.jpg' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item2.jpg' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item3.jpg' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <a href=" {% static 'index.html' %} "><img src=" {% static 'images/item4.jpg' %} " class="card-img-top" alt="image"></a>
-              <div class="card-body p-0">
-                <a href=" {% static 'index.html' %} ">
-                  <h5 class="card-title pt-4">Aliva Priva Jalvin</h5>
-                </a>
-                <p class="card-text">1087 Pin Oak Drive, Clinton, USA</p>
-
-                <div class="card-text">
-                  <ul class="d-flex">
-                    <li class="residence-list"> <img src=" {% static 'images/bed.png' %} " alt="image"> 4 bed</li>
-                    <li class="residence-list"> <img src=" {% static 'images/bath.png' %} " alt="image"> 2 bath</li>
-                    <li class="residence-list"> <img src=" {% static 'images/square.png' %} " alt="image"> 1203 Sqft.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-
-
-      </div>
-
-      <div class="residence-btn">
-        <a href=" {% static 'index.html' %} " class="btn btn-primary btn-lg my-5">View All Properties</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!--About us start  -->
-  <section id="about-us">
-    <div class="container">
-      <div class="row py-lg-5">
-
-        <h2 class="text-capitalize text-center m-0 py-lg-5">Why to choose us</h2>
-
-        <div class="text-center col-lg-4">
-          <img src=" {% static 'images/search.png' %} " class="bd-placeholder-img rounded-circle" alt="Bootstrap Themes" width="140"
-            height="140" loading="lazy">
-          <h4 class="fw-normal mt-5 ">Easy to find</h4>
-          <p>Urna, massa aliqua dui pellentesque. Ac, gravida in. Diam vitae, nec mattis lectus quam pretium amet
-            facilisis.</p>
-        </div>
-
-        <div class="text-center col-lg-4">
-          <img src=" {% static 'images/price.png' %} " class="bd-placeholder-img rounded-circle" alt="Bootstrap Themes" width="140"
-            height="140" loading="lazy">
-          <h4 class="fw-normal mt-5">Affordable Prices</h4>
-          <p>Urna, massa aliqua dui pellentesque. Ac, gravida in. Diam vitae, nec mattis lectus quam pretium amet
-            facilisis.</p>
-        </div>
-
-        <div class="text-center col-lg-4">
-          <img src=" {% static 'images/time.png' %} " class="bd-placeholder-img rounded-circle" alt="Bootstrap Themes" width="140"
-            height="140" loading="lazy">
-          <h4 class="fw-normal mt-5 ">Quickly Process</h4>
-          <p>Ac, gravida in diam vitae, nec mattis lectus quam pretium amet facilisis. Urna, massa aliqua dui
-            pellentesque. </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial start  -->
-  <section id="testimonial">
-    <div class="container my-5">
-
-
-
-      <div class="swiper testimonial-swiper">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="row my-5 py-lg-5">
-              <div class="col-md-8 mx-auto">
-                <img src=" {% static 'images/quote.png' %} " class="rounded mx-auto d-inline" alt="...">
-                <p class="testimonial-p mt-4">Massa semper non rutrum orci facilisi sit. Lectus porta quam a fringilla
-                  eget viverra sem. Vulputate massa hendrerit turpis gravida tempor, porttitor.</p>
-
-                <div class="row">
-                  <div class="col-md-8">
-                    <p class="pt-5 mb-1">Elena Pravo</p>
-                    <p class="">Ceo, Upstate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="row my-5 py-lg-5">
-              <div class="col-md-8 mx-auto">
-                <img src=" {% static 'images/quote.png' %} " class="rounded mx-auto d-inline" alt="...">
-                <p class="testimonial-p mt-4">Massa semper non rutrum orci facilisi sit. Lectus porta quam a fringilla
-                  eget viverra sem. Vulputate massa hendrerit turpis gravida tempor, porttitor.</p>
-
-                <div class="row">
-                  <div class="col-md-8">
-                    <p class="pt-5 mb-1">Elena Pravo</p>
-                    <p class="">Ceo, Upstate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="row my-5 py-lg-5">
-              <div class="col-md-8 mx-auto">
-                <img src=" {% static 'images/quote.png' %} " class="rounded mx-auto d-inline" alt="...">
-                <p class="testimonial-p mt-4">Massa semper non rutrum orci facilisi sit. Lectus porta quam a fringilla
-                  eget viverra sem. Vulputate massa hendrerit turpis gravida tempor, porttitor.</p>
-
-                <div class="row">
-                  <div class="col-md-8">
-                    <p class="pt-5 mb-1">Elena Pravo</p>
-                    <p class="">Ceo, Upstate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-        </div>
-
-        <div class=" testimonial-swiper-button col-md-3 position-absolute">
-          <div class="swiper-button-prev testimonial-arrow"></div>
-          <div class="arrow-divider"> | </div>
-          <div class="swiper-button-next testimonial-arrow"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Help start  -->
-  <section id="help" class="py-5"
-    style="background: linear-gradient(270deg, #1A242F 0.01%, rgba(26, 36, 47, 0.00) 100%);">
-    <div class="container-lg my-5">
-
-      <div class="row d-flex justify-content-between align-items-center">
-
-        <div class="col-md-6">
-          <div class="image-holder d-flex">
-            <img src=" {% static 'images/group.png' %} " class="img-fluid" alt="Bootstrap Themes" loading="lazy">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="text-content ps-md-5 mt-4 mt-md-0">
-            <h2 class="text-capitalize">We help people to find homes</h2>
-            <p>Mauris orci donec blandit maecenas. Orci lorem purus porttitor massa consectetur. Neque, vestibulum sed
-              varius magna et at. Eu, adipiscing morbi augue justo. Nibh laoreet volutpat quis velit. Blandit aliquam
-              donec sed morbi congue eget lorem viverra porta id lobortis.</p>
-            <a href=" {% static 'index.html' %} " class="btn btn-primary btn-lg">Get In Touch</a>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Lets start  -->
-  <section id="start">
-    <div class="container my-5 py-5">
-      <div class="row featurette py-lg-5 ">
-        <div class="col-md-5 order-md-1 d-flex">
-          <h1 class="text-capitalize  lh-1 mb-3">Let’s simply begin with rentiz.</h1>
-        </div>
-        <div class="col-md-7 order-md-2">
-          <div class="text-content ps-md-5 mt-4 mt-md-0">
-            <p class="py-lg-2">Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue justo. Nibh
-              laoreet volutpat quis velit. Blandit aliquam donec sed morbi congue eget lorem viverra porta id
-              lobortis.</p>
-            <a href=" {% static 'index.html' %} " class="btn btn-primary btn-lg px-4 me-md-2">Get
-              Started</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer start  -->
-  <section id="footer">
-    <div class="container footer-container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5  ">
-
-        <div class=" col-md-4">
-          <h3><img src=" {% static 'images/logo.png' %} " alt="image"></h3>
-          <p>Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue.</p>
-          <i class="bi-facebook pe-4"></i>
-          <i class="bi-instagram pe-4"></i>
-          <i class="bi-twitter pe-4"></i>
-          <i class="bi-youtube pe-4"></i>
-        </div>
-
-        <div class="col-md-2 ">
-          <h5>Project</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Houses</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Rooms</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Flats</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Appartments</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2 ">
-          <h5>Company</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">How we work ?</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Capital </a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Security </a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2 ">
-          <h5>Movement</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Movement</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Support us</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Pricing</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2 ">
-          <h5>Help</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Privacy </a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Condition</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Blog</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>
-          </ul>
-        </div>
-      </footer>
-    </div>
-
-
-
-    <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
-
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 ">
-        <div class="col-md-8 d-flex align-items-center">
-          <p>© 2023 TemplatesJungle, Inc. All rights reserved.</p>
-
-        </div>
-        <div class="col-md-4 d-flex align-items-center">
-          <p>HTML template by: <a href="https://templatesjungle.com/" class="link-primary"
-              target="_blank">TemplatesJungle</a> <br> Distributed by: <a href="https://themewagon.com" class="link-primary"
-              target="_blank">ThemeWagon</a></p>
-
-        </div>
-
-      </footer>
-    </div>
-  </section>
-
-
-
-
-  <script src=" {% static 'js/jquery-1.11.0.min.js' %} "></script>
-  <script src=" {% static 'js/script.js' %} "></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+<body>
+
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		<div class="top_menu row m0">
+			<div class="container">
+<!--				<div class="float-left">-->
+<!--					<ul class="list header_social">-->
+<!--&lt;!&ndash;						<li><a href="#">Contact Us +44 (012) 5689 3264</a></li>&ndash;&gt;-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<div class="float-right">-->
+<!--					<select>-->
+<!--						<option value="1">USD</option>-->
+<!--						<option value="1">EUR</option>-->
+<!--						<option value="1">AOA</option>-->
+<!--						<option value="1">AUD</option>-->
+<!--					</select>-->
+<!--					<select>-->
+<!--						<option value="1">ENG</option>-->
+<!--						<option value="1">FRA</option>-->
+<!--						<option value="1">BAN</option>-->
+<!--					</select>-->
+<!--				</div>-->
+			</div>
+		</div>
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;height:130px;" >
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent" >
+						<ul class="nav navbar-nav menu_nav ml-auto" >
+							<li class="nav-item active" ><a class="nav-link" href="index.html" style="color:white;">HOME</a></li>
+							<li class="nav-item" ><a class="nav-link" href="about-us.html" style="color:white;">ROOMS</a></li>
+							<li class="nav-item" ><a class="nav-link" href="gallery.html" style="color:white;">HOTSPOTS NEARBY</a></li>
+<!--							<li class="nav-item submenu dropdown">-->
+<!--								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--								 aria-expanded="false">Pages</a>-->
+<!--								<ul class="dropdown-menu">-->
+<!--									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>-->
+<!--									<li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li class="nav-item submenu dropdown">-->
+<!--								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--								 aria-expanded="false">Blog</a>-->
+<!--								<ul class="dropdown-menu">-->
+<!--									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
+<!--									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+							<li class="nav-item"><a class="nav-link" href="contact.html" style="color:white;">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
+
+	<!--================Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="overlay bg-parallax" data-stellar-ratio="2" data-stellar-vertical-offset="0" data-background=""></div>
+			<!-- <div class="overlay overlay-bg"></div> -->
+			<div class="container">
+				<div class="banner_content text-center">
+<!--					<p class="top-text">Welcome to</p>-->
+					<h1 style="">OMKAAR </h1>
+					<h1 style="color:white;">Tourist Home</h1>
+<!--					<p class="text">If you are looking at blank cassettes on the web, you may be very confused at the difference in-->
+<!--						price. You may-->
+<!--						see some for as low as $.17 each.</p>-->
+					<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM">
+						<img src="{% static 'img/video-icon.png' %}" class="vdo-btn" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Home Banner Area =================-->
+
+	<!--================Booking Area =================-->
+<!--	<section class="container">-->
+<!--		<div class="booking_area">-->
+<!--			<form action="">-->
+<!--				<div class="row">-->
+<!--					<div class="col-lg-3 col-sm-6 col-6">-->
+<!--&lt;!&ndash;						<div class="booking_item">&ndash;&gt;-->
+<!--&lt;!&ndash;							<p>Check - in</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							<span class="day">15</span>&ndash;&gt;-->
+<!--&lt;!&ndash;							<span class="month">th sep</span>&ndash;&gt;-->
+<!--&lt;!&ndash;							<label for="CheckIn">&ndash;&gt;-->
+<!--&lt;!&ndash;								<i class="fa fa-angle-down"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;							</label>&ndash;&gt;-->
+<!--&lt;!&ndash;							<input type="date" class="form-control" name='CheckIn' id="CheckIn" aria-describedby="emailHelp">&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-sm-6 col-6">-->
+<!--						<div class="booking_item">-->
+<!--							<p>Check - out</p>-->
+<!--							<span class="day">25</span>-->
+<!--							<span class="month">th sep</span>-->
+<!--							<label for="CheckOut">-->
+<!--								<i class="fa fa-angle-down"></i>-->
+<!--							</label>-->
+<!--							<input type="date" class="form-control" name='CheckOut' id="CheckOut" aria-describedby="emailHelp">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-sm-6 col-6">-->
+<!--						<div class="booking_item">-->
+<!--							<p>Toatal guests</p>-->
+<!--							<span class="day">05</span>-->
+<!--							<span class="month">person</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-sm-6 col-6 coupon-code">-->
+<!--						<div class="booking_item">-->
+<!--							<p class="text-capitalize">-->
+<!--								<a href="#">Got a Coupon Code?</a>-->
+<!--							</p>-->
+<!--							<button type="submit" class="main_btn text-uppercase">check availabity</button>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</form>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!--================End Booking Area =================-->
+
+	<!--================About Area =================-->
+	<section class="about_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<div class="top-part">
+							<p style="color:orange;">Accommodations</p>
+						</div>
+						<h2>
+							City Breaks Redefined
+						</h2>
+						<div class="bottom_part">
+							<p>
+								Your urban adventure starts here. Our brand new tourist home offers a stylish and comfortable retreat in the heart of the city. Explore vibrant neighborhoods, world-class attractions, and unwind in our thoughtfully designed rooms.
+							</p>
+						</div>
+<!--						<a href="#" class="main_btn mt-45">Request Custom Price</a>-->
+					</div>
+				</div>
+			</div>
+<!--			<div class="row justify-content-center">-->
+<!--				<div class="col-lg-10">-->
+<!--					<div class="video_area" id="video">-->
+<!--						<img class="img-fluid" src="{% static 'img/video-1.jpg' %}" alt="">-->
+<!--						<div class="overlay overlay-bg"></div>-->
+<!--						<a class="popup-youtube" href="https://www.youtube.com/watch?v=VufDd-QL1c0">-->
+<!--							<img src="{% static 'img/video-icon-1.png' %}" alt="">-->
+<!--						</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+		</div>
+	</section>
+	<!--================End About Area =================-->
+
+	<!-- Start Our Room Area -->
+	<section class="our_room_area">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<div class="top-part">
+							<p style="color:orange;">Deluxe and Luxury</p>
+						</div>
+						<h2>Our Luxury Rooms</h2>
+<!--						<div class="bottom_part">-->
+<!--&lt;!&ndash;							<p>&ndash;&gt;-->
+<!--&lt;!&ndash;								We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,&ndash;&gt;-->
+<!--&lt;!&ndash;								also asks us to remain physically young. Young at heart,&ndash;&gt;-->
+<!--&lt;!&ndash;							</p>&ndash;&gt;-->
+<!--						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<div class="room_left">
+						<img class="img-fluid" src="{% static 'img/room/r1.jpg' %}" alt="">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="owl-carousel owl-room">
+						<div class="room_right">
+							<h1 class="price">
+								<i class="fa fa-dollar"></i>250<span>/night</span>
+							</h1>
+							<h1 class="type">
+								Double Deluxe Room
+							</h1>
+							<p>
+								We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,
+								also
+								asks us to remain physically young. Young at heart,
+							</p>
+							<div class="row">
+								<div class="col-lg-6 col-md-5">
+									<ul>
+										<li>Air Condition</li>
+										<li>Car Parking</li>
+										<li>Swimming Pool</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 col-md-5">
+									<ul>
+										<li>Restaurant & Bar</li>
+										<li>Vehicle Rental</li>
+										<li>Complementary Meal</li>
+									</ul>
+								</div>
+							</div>
+							<a href="#" class="main_btn">Book Now</a>
+						</div>
+
+						<div class="room_right">
+							<h1 class="price">
+								<i class="fa fa-dollar"></i>250<span>/night</span>
+							</h1>
+							<h1 class="type">
+								Double Deluxe Room
+							</h1>
+							<p>
+								We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,
+								also
+								asks us to remain physically young. Young at heart,
+							</p>
+							<div class="row">
+								<div class="col-lg-6 col-md-5">
+									<ul>
+										<li>Air Condition</li>
+										<li>Car Parking</li>
+										<li>Swimming Pool</li>
+									</ul>
+								</div>
+								<div class="col-lg-6 col-md-5">
+									<ul>
+										<li>Restaurant & Bar</li>
+										<li>Vehicle Rental</li>
+										<li>Complementary Meal</li>
+									</ul>
+								</div>
+							</div>
+							<a href="#" class="main_btn">Book Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Our Room Area -->
+
+	<!--================Testimonials Area =================-->
+	<section class="testimonials-area section_gap_top color-bg">
+		<div class="container">
+			<div class="text-center">
+				<img class="quote-img" src="{% static 'img/quote.png' %}" alt="">
+			</div>
+			<div class="testi-slider owl-carousel" data-slider-id="1">
+				<div class="item">
+					<div class="testi-item">
+						<h4>Fanny Spencer</h4>
+						<ul class="list">
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+						</ul>
+						<div class="wow fadeIn" data-wow-duration="1s">
+							<p>
+								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,
+								you travel
+								across her face <br> and She is the host to your journey.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="testi-item">
+						<h4>Fanny Spencer</h4>
+						<ul class="list">
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+						</ul>
+						<div class="wow fadeIn" data-wow-duration="1s">
+							<p>
+								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,
+								you travel
+								across her face <br> and She is the host to your journey.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="testi-item">
+						<h4>Fanny Spencer</h4>
+						<ul class="list">
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+						</ul>
+						<div class="wow fadeIn" data-wow-duration="1s">
+							<p>
+								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,
+								you travel
+								across her face <br> and She is the host to your journey.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="testi-item">
+						<img src="{% static 'img/quote.png' %}" alt="">
+						<h4>Fanny Spencer</h4>
+						<ul class="list">
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+							<li><a href="#"><i class="fa fa-star"></i></a></li>
+						</ul>
+						<div class="wow fadeIn" data-wow-duration="1s">
+							<p>
+								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,
+								you travel
+								across her face <br> and She is the host to your journey.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="owl-thumbs d-flex justify-content-center" data-slider-id="1">
+				<div class="owl-thumb-item">
+					<div>
+						<img class="img-fluid" src="{% static 'img/testimonial/t1.png' %}" alt="">
+					</div>
+					<div class="overlay overlay-grad"></div>
+				</div>
+				<div class="owl-thumb-item">
+					<div>
+						<img class="img-fluid" src="{% static 'img/testimonial/t2.png' %}" alt="">
+					</div>
+					<div class="overlay overlay-grad"></div>
+				</div>
+				<div class="owl-thumb-item">
+					<div>
+						<img class="img-fluid" src="{% static 'img/testimonial/t3.png' %}" alt="">
+					</div>
+					<div class="overlay overlay-grad"></div>
+				</div>
+				<div class="owl-thumb-item">
+					<div>
+						<img class="img-fluid" src="{% static 'img/testimonial/t4.png' %}" alt="">
+					</div>
+					<div class="overlay overlay-grad"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Testimonials Area =================-->
+
+	<!--================Latest Blog Area =================-->
+	<section class="latest_blog_area section_gap color-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<p class="text-uppercase">Our Blog Posts</p>
+						<h2>
+							Our Blog Posts
+						</h2>
+						<p>
+							nappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
+							especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.
+							inappropriate behavior is often laughed.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="single-recent-blog col-lg-4 col-md-6">
+					<div class="thumb">
+						<img class="f-img img-fluid mx-auto" src="{% static 'img/b1.jpg' %}" alt="">
+					</div>
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+						<div>
+							<a href="#" class="main_btn">Travel</a>
+						</div>
+						<div class="meta">
+							<span>30th Sep, 2018</span>
+							<span>02 Comments</span>
+						</div>
+					</div>
+					<a href="#">
+						<h4>Low Cost Advertising let us know
+							the side effect of printing</h4>
+					</a>
+					<p>
+						Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer hears tales of
+						diamonds and begins dreaming of vast riches. He sells his farm and hikes off over the horizon never heard.
+					</p>
+				</div>
+				<div class="single-recent-blog col-lg-4 col-md-6">
+					<div class="thumb">
+						<img class="f-img img-fluid mx-auto" src="{% static 'img/b2.jpg' %}" alt="">
+					</div>
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+						<div>
+							<a href="#" class="main_btn">Travel</a>
+						</div>
+						<div class="meta">
+							<span>30th Sep, 2018</span>
+							<span>02 Comments</span>
+						</div>
+					</div>
+					<a href="#">
+						<h4>Low Cost Advertising let us know
+							the side effect of printing</h4>
+					</a>
+					<p>
+						Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer hears tales of
+						diamonds and begins dreaming of vast riches. He sells his farm and hikes off over the horizon never heard.
+					</p>
+				</div>
+				<div class="single-recent-blog col-lg-4 col-md-6">
+					<div class="thumb">
+						<img class="f-img img-fluid mx-auto" src="{% static 'img/b3.jpg' %}" alt="">
+					</div>
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+						<div>
+							<a href="#" class="main_btn">Travel</a>
+						</div>
+						<div class="meta">
+							<span>30th Sep, 2018</span>
+							<span>02 Comments</span>
+						</div>
+					</div>
+					<a href="#">
+						<h4>Low Cost Advertising let us know
+							the side effect of printing</h4>
+					</a>
+					<p>
+						Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer hears tales of
+						diamonds and begins dreaming of vast riches. He sells his farm and hikes off over the horizon never heard.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Latest Blog Area =================-->
+
+	<!--================ start footer Area  =================-->
+	<footer class="footer-area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Informations</h6>
+						<p>
+							The world has become so fasted that people don’t want to standby reading page of info they would much rather
+							look at a presentation and understand message.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Quick Links</h6>
+						<div class="row">
+							<ul class="col footer-nav">
+								<li><a href="#">Sitemaps</a></li>
+								<li><a href="#">Categories</a></li>
+								<li><a href="#">Archives</a></li>
+								<li><a href="#">Advertise</a></li>
+								<li><a href="#">Ad Choice</a></li>
+							</ul>
+							<ul class="col footer-nav">
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Help Center</a></li>
+								<li><a href="#">Newsletters</a></li>
+								<li><a href="#">Feedback</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Subscribe</h6>
+<!--						<p>For business professionals caught between high OEM price mediocre print and graphic.</p>-->
+						<div class="" id="mc_embed_signup">
+
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							 method="get" class="form-inline">
+
+								<div class="d-flex flex-row">
+
+									<input class="form-control" name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+									 required="" type="email">
+
+
+									<button class="click-btn btn btn-default"><i class="lnr lnr-location" aria-hidden="true"></i></button>
+									<div style="position: absolute; left: -5000px;">
+										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+									</div>
+
+									<!-- <div class="col-lg-4 col-md-4">
+										<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+									</div>  -->
+								</div>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3  col-md-6 col-sm-6">
+<!--					<div class="single-footer-widget mail-chimp">-->
+<!--						<h6 class="mb-20">Instafeed</h6>-->
+<!--						<ul class="instafeed d-flex flex-wrap">-->
+<!--							<li><img src="{% static 'img/instagram/Image-01.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-02.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-03.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-04.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-05.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-06.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-07.jpg' %}" alt=""></li>-->
+<!--							<li><img src="{% static 'img/instagram/Image-08.jpg' %}" alt=""></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+				</div>
+			</div>
+			<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+				<div>
+					<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+<!--				<div class="footer-social d-flex align-items-center">-->
+<!--&lt;!&ndash;					<a href="#"><i class="fa fa-facebook"></i></a>&ndash;&gt;-->
+<!--					<a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--					<a href="#"><i class="fa fa-dribbble"></i></a>-->
+<!--					<a href="#"><i class="fa fa-behance"></i></a>-->
+<!--				</div>-->
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area  =================-->
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/popper.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/stellar.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+	<script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+	<script src="{% static 'vendors/isotope/isotope.pkgd.min.js' %}"></script>
+	<script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+	<script src="{% static 'vendors/popup/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+	<script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+	<script src="{% static 'js/mail-script.js' %}"></script>
+	<script src="{% static 'js/theme.js' %}"></script>
 </body>
 
 </html>
