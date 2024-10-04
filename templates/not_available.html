@@ -9,12 +9,11 @@
 
 {% endblock %}
 
-
 {% block content %}
 
 <div class="text-center">
-<h2>Room is available!</h2>
-<a href="{% url 'book_room' room.id %}"><button class="btn btn-success">Book Now</button></a>
+<h2 style="color:red">Room is not Available!</h2>
+
 </div>
 
 {% endblock %}

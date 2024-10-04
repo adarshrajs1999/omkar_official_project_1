@@ -24,7 +24,7 @@ def check_availability(request):
             if room:
                 return render(request, 'available.html', {'room': room})
             else:
-                return redirect('/')
+                return redirect('not_available')
     else:
         form = AvailabilityForm()
 
@@ -51,7 +51,9 @@ def payment_options(request):
 
 
 def cash_payment(request):
-    return redirect('home')
+    return render(request,'cash_booking_confirmed.html')
+
+
 
 
 # booking/views.py
@@ -71,6 +73,9 @@ def payment_success(request):
     payment_id = request.GET.get('payment_id')
     # Process the payment_id as needed (e.g., store it in the database)
     return render(request, 'payment_success.html', {'payment_id': payment_id})
+
+def not_available(request):
+    return render(request,'not_available.html')
 
 
 

@@ -10,6 +10,7 @@ urlpatterns = [
     path('payment-options/', views.payment_options, name='payment_options'),
     path('cash-payment/', views.cash_payment, name='cash_payment'),
     path('online-payment/', views.online_payment, name='online_payment'),
-    path('payment-success/', views.payment_success, name='payment_success')
+    path('payment-success/', views.payment_success, name='payment_success'),
+    path('not_available/',views.not_available,name='not_available')
 
 ]
