@@ -61,7 +61,7 @@ ROOT_URLCONF = 'omkar_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,8 +129,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RAZORPAY_KEY_ID = 'your_key_id'
-RAZORPAY_KEY_SECRET = 'your_key_secret'
+
+RAZORPAY_KEY_ID = 'YOUR_RAZORPAY_KEY_ID'
+RAZORPAY_KEY_SECRET = 'YOUR_RAZORPAY_KEY_SECRET'
+
 
 
 STATIC_URL = 'static/'

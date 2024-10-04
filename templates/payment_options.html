@@ -1,0 +1,11 @@
+<!-- templates/booking/payment_options.html -->
+
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h2>Payment Options</h2>
+<a href="{% url 'cash_payment' %}"><button class="btn btn-warning">Cash Payment</button></a>
+<a href="{% url 'online_payment' %}"><button class="btn btn-success">Online Payment</button></a>
+
+{% endblock %}

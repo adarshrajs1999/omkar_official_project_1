@@ -1,0 +1,14 @@
+<!-- templates/booking/check_availability.html -->
+
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h2>Check Availability</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Check Availability</button>
+</form>
+
+{% endblock %}

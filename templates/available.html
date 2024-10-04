@@ -1,0 +1,11 @@
+<!-- templates/booking/available.html -->
+
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h2>Room Available!</h2>
+<p>{{ room.room_type }} is available.</p>
+<a href="{% url 'book_room' room.id %}"><button class="btn btn-success">Book Now</button></a>
+
+{% endblock %}

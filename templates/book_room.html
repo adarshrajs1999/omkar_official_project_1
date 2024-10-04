@@ -1,0 +1,13 @@
+<!-- templates/booking/book_room.html -->
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h2>Book Room</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Book Now</button>
+</form>
+
+{% endblock %}

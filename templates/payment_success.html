@@ -1,0 +1,9 @@
+<!-- templates/booking/payment_success.html -->
+{% extends 'background.html' %}
+
+{% block content %}
+    <h1>Payment Successful!</h1>
+    <p>Your payment ID is: {{ payment_id }}</p>
+<a href="{% url 'home' %}"><button class="btn btn-success">Go to Home</button></a>
+
+{% endblock %}
