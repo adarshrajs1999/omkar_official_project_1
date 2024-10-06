@@ -27,7 +27,6 @@
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-</head>
 
 
 </head>
@@ -36,66 +35,39 @@
 
 	<!--================Header Menu Area =================-->
 	<header class="header_area">
-		<div class="top_menu row m0">
-			<div class="container">
-<!--				<div class="float-left">-->
-<!--					<ul class="list header_social">-->
-<!--&lt;!&ndash;						<li><a href="#">Contact Us +44 (012) 5689 3264</a></li>&ndash;&gt;-->
-<!--					</ul>-->
-<!--				</div>-->
-<!--				<div class="float-right">-->
-<!--					<select>-->
-<!--						<option value="1">USD</option>-->
-<!--						<option value="1">EUR</option>-->
-<!--						<option value="1">AOA</option>-->
-<!--						<option value="1">AUD</option>-->
-<!--					</select>-->
-<!--					<select>-->
-<!--						<option value="1">ENG</option>-->
-<!--						<option value="1">FRA</option>-->
-<!--						<option value="1">BAN</option>-->
-<!--					</select>-->
-<!--				</div>-->
-			</div>
-		</div>
+
 		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;height:130px;" >
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}" alt="" ></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent" >
-						<ul class="nav navbar-nav menu_nav ml-auto" >
-							<li class="nav-item active" ><a class="nav-link" href="#" style="color:white;">HOME</a></li>
-							<li class="nav-item" ><a class="nav-link" href="#rooms" style="color:white;">ROOMS</a></li>
-							<li class="nav-item" ><a class="nav-link"  style="color:white;" href="#hotspots">HOTSPOTS NEARBY</a></li>
-<!--							<li class="nav-item submenu dropdown">-->
-<!--								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-<!--								 aria-expanded="false">Pages</a>-->
-<!--								<ul class="dropdown-menu">-->
-<!--									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>-->
-<!--									<li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>-->
-<!--								</ul>-->
-<!--							</li>-->
-<!--							<li class="nav-item submenu dropdown">-->
-<!--								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-<!--								 aria-expanded="false">Blog</a>-->
-<!--								<ul class="dropdown-menu">-->
-<!--									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
-<!--									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>-->
-<!--								</ul>-->
-<!--							</li>-->
-							<li class="nav-item"><a class="nav-link" href="#contact" style="color:white;">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000; height: 130px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
+    <div class="container">
+        <a class="navbar-brand logo_h" href="index.html">
+            <img src="/static/img/logo.png" alt="" style="height: 100%; max-height: 100px;"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+            <span class="navbar-toggler-icon" style="background-color: white;"></span>
+        </button>
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rooms" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">ROOMS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#hotspots" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOTSPOTS NEARBY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
+                </li>
+                <li class="nav-item" style="background-color:blue;">
+                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">Book Your Room &#8594;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 		</div>
 	</header>
 	<!--================Header Menu Area =================-->
@@ -104,881 +76,303 @@
 	<section class="home_banner_area">
 		<div class="banner_inner d-flex align-items-center">
 			<div class="overlay bg-parallax" data-stellar-ratio="2" data-stellar-vertical-offset="0" data-background=""></div>
-			<!-- <div class="overlay overlay-bg"></div> -->
 			<div class="container">
 				<div class="banner_content text-center">
-<!--					<p class="top-text">Welcome to</p>-->
 					<h1>OMKAAR </h1>
 					<h2>Tourist Home</h2>
-<!--					<p class="text">If you are looking at blank cassettes on the web, you may be very confused at the difference in-->
-<!--						price. You may-->
-<!--						see some for as low as $.17 each.</p>-->
-					<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM">
-						<img src="{% static 'img/video-icon.png' %}" class="vdo-btn" alt="">
-					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--================End Home Banner Area =================-->
 
-	<!--================Booking Area =================-->
-<!--	<section class="container">-->
-<!--		<div class="booking_area">-->
-<!--			<form action="">-->
-<!--				<div class="row">-->
-<!--					<div class="col-lg-3 col-sm-6 col-6">-->
-<!--&lt;!&ndash;						<div class="booking_item">&ndash;&gt;-->
-<!--&lt;!&ndash;							<p>Check - in</p>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span class="day">15</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span class="month">th sep</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<label for="CheckIn">&ndash;&gt;-->
-<!--&lt;!&ndash;								<i class="fa fa-angle-down"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;							</label>&ndash;&gt;-->
-<!--&lt;!&ndash;							<input type="date" class="form-control" name='CheckIn' id="CheckIn" aria-describedby="emailHelp">&ndash;&gt;-->
-<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-<!--					</div>-->
-<!--					<div class="col-lg-3 col-sm-6 col-6">-->
-<!--						<div class="booking_item">-->
-<!--							<p>Check - out</p>-->
-<!--							<span class="day">25</span>-->
-<!--							<span class="month">th sep</span>-->
-<!--							<label for="CheckOut">-->
-<!--								<i class="fa fa-angle-down"></i>-->
-<!--							</label>-->
-<!--							<input type="date" class="form-control" name='CheckOut' id="CheckOut" aria-describedby="emailHelp">-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="col-lg-3 col-sm-6 col-6">-->
-<!--						<div class="booking_item">-->
-<!--							<p>Toatal guests</p>-->
-<!--							<span class="day">05</span>-->
-<!--							<span class="month">person</span>-->
-<!--						</div>-->
-<!--					<div class="col-lg-3 col-sm-6 col-6 coupon-code">-->
-<!--						<div class="booking_item">-->
-<!--							<p class="text-capitalize">-->
-<!--								<a href="#">Got a Coupon Code?</a>-->
-<!--							</p>-->
-<!--							<button type="submit" class="main_btn text-uppercase">check availabity</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</form>-->
-<!--		</div>-->
-<!--	</section>-->
-	<!--================End Booking Area =================-->
 
 	<!--================About Area =================-->
-<!--	<section class="about_area section_gap" >-->
-		<div class="container" style="margin-bottom:100px;margin-top:150px;">
-			<div class="row">
-    <div class="col-lg-6">
-        <div class="main_title">
-            <div class="top-part">
-                <p style="color:orange;">Accommodations</p>
+	<div class="container" style="margin-bottom:100px; margin-top:150px; background-color: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main_title" style="margin-bottom: 20px;">
+                <div class="top-part">
+                    <p style="color: orange; font-weight: bold; font-size: 1.2rem; text-transform: uppercase;">Accommodations</p>
+                </div>
+                <h2 style="font-size: 2.5rem; color: #333; margin: 10px 0;">City Breaks Redefined</h2>
+                <div class="bottom_part">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
+                        Your urban adventure starts here. Our brand new tourist home offers a stylish and comfortable retreat in the heart of the city. Explore vibrant neighborhoods, world-class attractions, and unwind in our thoughtfully designed rooms.
+                    </p>
+                </div>
             </div>
-            <h2>
-                City Breaks Redefined
-            </h2>
-            <div class="bottom_part">
-                <p>
-                    Your urban adventure starts here. Our brand new tourist home offers a stylish and comfortable retreat in the heart of the city. Explore vibrant neighborhoods, world-class attractions, and unwind in our thoughtfully designed rooms.
-                </p>
+        </div>
+
+        <div class="col-lg-6">
+            <img class="img-fluid" src="{% static 'img/omkar_image-2.jpg' %}" alt="Beautiful accommodation in the city" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+        </div>
+    </div>
+</div>
+
+	<!--================End About Area =================-->
+
+
+	<section class="our_room_area" style="margin-left: 20px; padding: 50px 0; background-color: #f9f9f9;" id="rooms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title" style="text-align: center; margin-bottom: 40px;">
+                    <div class="top-part">
+                        <p style="color: orange; font-size: 1.5em; font-weight: bold;">Deluxe and Luxury</p>
+                    </div>
+                    <h2 style="font-size: 2.5em; font-weight: bold; color: #333;">Our Luxury Rooms</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room 1 -->
+        <div class="row align-items-center" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="room_left">
+                    <img class="img-fluid" src="{% static 'img/room/double_bed_image.jpg' %}" alt="" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room_right" style="padding: 20px;">
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Double Bed Room</h2>
+                    <p style="color: orange; font-weight: bold;">AC/Non AC</p>
+                    <p style="color: #555;">Welcome to our beautifully appointed double bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="row align-items-center" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="room_left">
+                    <img class="img-fluid" src="{% static 'img/room/triple_bed_image.jpg' %}" alt="" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room_right" style="padding: 20px;">
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Triple Bed Room</h2>
+                    <p style="color: orange; font-weight: bold;">AC/Non AC</p>
+                    <p style="color: #555;">Welcome to our spacious triple bed room, perfect for families, friends, or groups traveling together. This thoughtfully designed room provides ample space and comfort for up to three guests, ensuring a restful stay.</p>
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="row align-items-center" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="room_left">
+                    <img class="img-fluid" src="{% static 'img/room/four_bed_room.jpg' %}" alt="" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room_right" style="padding: 20px;">
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Four Bed Room</h2>
+                    <p style="color: orange; font-weight: bold;">AC/Non AC</p>
+                    <p style="color: #555;">Welcome to our spacious four bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room 4 -->
+        <div class="row align-items-center" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="room_left">
+                    <img class="img-fluid" src="{% static 'img/room/dormatory.jpg' %}" alt="" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room_right" style="padding: 20px;">
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Dormitory</h2>
+                    <p style="color: orange; font-weight: bold;">AC/Non AC</p>
+                    <p style="color: #555;">Welcome to our vibrant and welcoming dormitory, designed for budget travelers, students, or groups looking for affordable yet comfortable accommodations. Our dormitory offers a social atmosphere where guests can meet, share experiences, and make lasting memories.</p>
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="container-fluid" style="margin-top: 100px; text-align: center;">
+            <i class="fas fa-wrench" style="font-size: 3em;color:orange;"></i>
+            <h2 style="font-size: 50px; color: #333;">Our Services</h2>
+        </div>
+
+        <div class="container" style="margin-top: 100px; margin-bottom: 50px;">
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <i class="fas fa-broom" style="font-size: 2em; color: orange;"></i>
+                    <h3 style="color: #333;">Room Cleaning</h3>
+                    <p style="color: #555;">Experience immaculate cleanliness, tidiness, and a fresh comfortable environment.</p>
+                </div>
+
+                <div class="col" style="text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="font-size: 2em; color: orange;"></i>
+                    <h3 style="color: #333;">Pickup & Drop</h3>
+                    <p style="color: #555;">Ensures seamless journey to and from Omkaar Tourist Home, making your travel hassle-free.</p>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="col-lg-6">
-		<img class="img-fluid" src="{% static 'img/omkar_image-2.jpg' %}" alt="">
-<!--        <div class="main_title">-->
-<!--            <div class="top-part">-->
-<!--                <p style="color:orange;">Accommodations</p>-->
-<!--            </div>-->
-<!--            <h2>-->
-<!--                City Breaks Redefined-->
-<!--            </h2>-->
-<!--            <div class="bottom_part">-->
-<!--                <p>-->
-<!--                    Your urban adventure starts here. Our brand new tourist home offers a stylish and comfortable retreat in the heart of the city. Explore vibrant neighborhoods, world-class attractions, and unwind in our thoughtfully designed rooms.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
-</div>
-
-
-
-
-
-<!--						<a href="#" class="main_btn mt-45">Request Custom Price</a>-->
-					</div>
-				</div>
-			</div>
-<!--			<div class="row justify-content-center">-->
-<!--				<div class="col-lg-10">-->
-<!--					<div class="video_area" id="video">-->
-<!--						<img class="img-fluid" src="{% static 'img/video-1.jpg' %}" alt="">-->
-<!--						<div class="overlay overlay-bg"></div>-->
-<!--						<a class="popup-youtube" href="https://www.youtube.com/watch?v=VufDd-QL1c0">-->
-<!--							<img src="{% static 'img/video-icon-1.png' %}" alt="">-->
-<!--						</a>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-		</div>
-	</section>
-	<!--================End About Area =================-->
-
-	<!-- Start Our Room Area -->
-	<section class="our_room_area" style="margin-left:20px;" id="rooms">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12" >
-					<div class="main_title">
-						<div class="top-part" >
-							<p style="color:orange;">Deluxe and Luxury</p>
-						</div>
-						<h2>Our Luxury Rooms</h2>
-<!--						<div class="bottom_part">-->
-<!--&lt;!&ndash;							<p>&ndash;&gt;-->
-<!--&lt;!&ndash;								We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,&ndash;&gt;-->
-<!--&lt;!&ndash;								also asks us to remain physically young. Young at heart,&ndash;&gt;-->
-<!--&lt;!&ndash;							</p>&ndash;&gt;-->
-<!--						</div>-->
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-lg-6">
-					<div class="room_left">
-						<img class="img-fluid" src="{% static 'img/room/double_bed_image.jpg' %}" alt="">
-					</div>
-				</div>
-				<div class="col-lg-6">
-<!--					<div class="owl-carousel owl-room">-->
-						<div class="room_right">
-<!--							<h1 class="price">-->
-<!--								<i class="fa fa-dollar"></i>250<span>/night</span>-->
-<!--							</h1>-->
-							<h2 class="type">
-								Double Bed Room
-							</h2>
-							<p style="color:orange;">
-								AC/Non AC
-							</p>
-							<p>Welcome to our beautifyylly appointed double bed room,designed for comfort and relaxation.This spacious room features a cozy double bed with premium bedding,ensuring a restful night's sleep for two guests.</p>
-<!--							<div class="row">-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Air Condition</li>-->
-<!--										<li>Car Parking</li>-->
-<!--										<li>Swimming Pool</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Restaurant & Bar</li>-->
-<!--										<li>Vehicle Rental</li>-->
-<!--										<li>Complementary Meal</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--							</div>-->
-							<a href="{% url 'check_availability' %}" class="main_btn">CHECK AVAILABILITY</a>
-						</div>
-
-					</div>
-				</div>
-
-
-	<div class="row align-items-center" style="margin-top:50px;">
-				<div class="col-lg-6">
-					<div class="room_left">
-						<img class="img-fluid" src="{% static 'img/room/triple_bed_image.jpg' %}" alt="">
-					</div>
-				</div>
-				<div class="col-lg-6">
-<!--					<div class="owl-carousel owl-room">-->
-						<div class="room_right">
-<!--							<h1 class="price">-->
-<!--								<i class="fa fa-dollar"></i>250<span>/night</span>-->
-<!--							</h1>-->
-							<h2 class="type">
-								Triple Bed Room
-							</h2>
-							<p style="color:orange;">
-								AC/Non AC
-							</p>
-							<p>Welcome to our spacious triple bed room,perfect for families,friends,or groups traveling together.
-							This thoughtfully designed room provides ample space and comfort for up to three guests,ensuring a restful stay.</p>
-<!--							<div class="row">-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Air Condition</li>-->
-<!--										<li>Car Parking</li>-->
-<!--										<li>Swimming Pool</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Restaurant & Bar</li>-->
-<!--										<li>Vehicle Rental</li>-->
-<!--										<li>Complementary Meal</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--							</div>-->
-							<a href="{% url 'check_availability' %}" class="main_btn">CHECK AVAILABILITY</a>
-						</div>
-
-
-					</div>
-				</div>
-
-
-	<div class="row align-items-center" style="margin-top:50px;">
-				<div class="col-lg-6">
-					<div class="room_left">
-						<img class="img-fluid" src="{% static 'img/room/four_bed_room.jpg' %}" alt="">
-					</div>
-				</div>
-				<div class="col-lg-6">
-<!--					<div class="owl-carousel owl-room">-->
-						<div class="room_right">
-<!--							<h1 class="price">-->
-<!--								<i class="fa fa-dollar"></i>250<span>/night</span>-->
-<!--							</h1>-->
-							<h2 class="type">
-								Four Bed Room
-							</h2>
-							<p style="color:orange;">
-								AC/Non AC
-							</p>
-							<p>Welcome to our spacious four bed room,ideal for families,groups,or friends traveling together.
-							Designed with comfort and convenience in mind,this room provides ample space for relaxation and rest,
-							making it the perfect choice for your stay.</p>
-<!--							<div class="row">-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Air Condition</li>-->
-<!--										<li>Car Parking</li>-->
-<!--										<li>Swimming Pool</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Restaurant & Bar</li>-->
-<!--										<li>Vehicle Rental</li>-->
-<!--										<li>Complementary Meal</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--							</div>-->
-							<a href="{% url 'check_availability' %}" class="main_btn">CHECK AVAILABILITY</a>
-						</div>
-
-					</div>
-				</div>
-
-
-
-
-
-			<div class="row align-items-center" style="margin-top:50px;">
-				<div class="col-lg-6">
-					<div class="room_left">
-						<img class="img-fluid" src="{% static 'img/room/dormatory.jpg' %}" alt="" >
-					</div>
-				</div>
-				<div class="col-lg-6">
-<!--					<div class="owl-carousel owl-room">-->
-						<div class="room_right">
-<!--							<h1 class="price">-->
-<!--								<i class="fa fa-dollar"></i>250<span>/night</span>-->
-<!--							</h1>-->
-							<h2 class="type">
-								Dormatory
-							</h2>
-							<p style="color:orange;">
-								AC/Non AC
-							</p>
-							<p>Welcome to our vibrant and welcoming dormitory,designed for budget travelers, students,or groups looking for affordable yet comfortable accommodations.
-							Our dormitory offers a social atmosphere where guests can meet,share experiences,and make lasting memories.</p>
-<!--							<div class="row">-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Air Condition</li>-->
-<!--										<li>Car Parking</li>-->
-<!--										<li>Swimming Pool</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Restaurant & Bar</li>-->
-<!--										<li>Vehicle Rental</li>-->
-<!--										<li>Complementary Meal</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--							</div>-->
-							<a href="{% url 'check_availability' %}" class="main_btn">CHECK AVAILABILITY</a>
-						</div>
-					</div>
-		<div class="container-fluid " style="margin-top:100px;margin-left:50px;margin-left:0px;text-align:center;">
-		<i class="fas fa-wrench"></i>
-			<h2 style="font-size:50px;">Our Services</h2>
-		</div>
-
-<!--				<div class="card">-->
-<!--  <h5 class="card-header" >Featured</h5>-->
-<!--  <div class="card-body" style="background-image:url('{% static 'img/banner/home-banner.jpg' %}')">-->
-<!--    <h5 class="card-title" >Special title treatment</h5>-->
-<!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
-<!--  </div>-->
-</div>
-
-
-
-		<div class="container" style="margin-top:100px;margin-bottom:200px;">
-			<div class="row">
-			<div class="col">
-				<i class="fas fa-broom" style="margin-left:80px;"></i>
-				<h3>Room Cleaning</h3>
-				<p>Experience immaculate cleanliness, tidiness and a fresh comfortable environment.</p>
-			</div>
-
-			<div class="col">
-				<i class="fas fa-map-marker-alt" style="margin-left:80px;"></i>
-				<h3>Pickup & Drop</h3>
-				<p>Ensures seamless journey to and from Omkaar Tourist Home, making your travel hassle-free.</p>
-			</div>
-
-		</div>
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--						<div class="room_right">-->
-<!--							<h1 class="price">-->
-<!--								<i class="fa fa-dollar"></i>250<span>/night</span>-->
-<!--							</h1>-->
-<!--							<h1 class="type">-->
-<!--								Double Deluxe Room-->
-<!--							</h1>-->
-<!--							<p>-->
-<!--								We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,-->
-<!--								also-->
-<!--								asks us to remain physically young. Young at heart,-->
-<!--							</p>-->
-<!--							<div class="row">-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Air Condition</li>-->
-<!--										<li>Car Parking</li>-->
-<!--										<li>Swimming Pool</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--								<div class="col-lg-6 col-md-5">-->
-<!--									<ul>-->
-<!--										<li>Restaurant & Bar</li>-->
-<!--										<li>Vehicle Rental</li>-->
-<!--										<li>Complementary Meal</li>-->
-<!--									</ul>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--							<a href="#" class="main_btn">Book Now</a>-->
-<!--						</div>-->
-
-
-
-
-
-
-			</div>
-
-
-
-		</div>
-	</section>
-	<!-- End Our Room Area -->
-
-	<!--================Testimonials Area =================-->
-<!--	<section class="testimonials-area section_gap_top color-bg">-->
-<!--		<div class="container">-->
-<!--			<div class="text-center">-->
-<!--				<img class="quote-img" src="{% static 'img/quote.png' %}" alt="">-->
-<!--			</div>-->
-<!--			<div class="testi-slider owl-carousel" data-slider-id="1">-->
-<!--				<div class="item">-->
-<!--					<div class="testi-item">-->
-<!--						<h3>We pride ourselves on offering a range of services.</h3>-->
-<!--						<ul class="list">-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--						</ul>-->
-<!--						<div class="wow fadeIn" data-wow-duration="1s">-->
-<!--							<p>-->
-<!--								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,-->
-<!--								you travel-->
-<!--								across her face <br> and She is the host to your journey.-->
-<!--							</p>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="item">-->
-<!--					<div class="testi-item">-->
-<!--						<h4>Fanny Spencer</h4>-->
-<!--						<ul class="list">-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--						</ul>-->
-<!--						<div class="wow fadeIn" data-wow-duration="1s">-->
-<!--							<p>-->
-<!--								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,-->
-<!--								you travel-->
-<!--								across her face <br> and She is the host to your journey.-->
-<!--							</p>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="item">-->
-<!--					<div class="testi-item">-->
-<!--						<h4>Fanny Spencer</h4>-->
-<!--						<ul class="list">-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--						</ul>-->
-<!--						<div class="wow fadeIn" data-wow-duration="1s">-->
-<!--							<p>-->
-<!--								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,-->
-<!--								you travel-->
-<!--								across her face <br> and She is the host to your journey.-->
-<!--							</p>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="item">-->
-<!--					<div class="testi-item">-->
-<!--						<img src="{% static 'img/quote.png' %}" alt="">-->
-<!--						<h4>Fanny Spencer</h4>-->
-<!--						<ul class="list">-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--							<li><a href="#"><i class="fa fa-star"></i></a></li>-->
-<!--						</ul>-->
-<!--						<div class="wow fadeIn" data-wow-duration="1s">-->
-<!--							<p>-->
-<!--								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it,-->
-<!--								you travel-->
-<!--								across her face <br> and She is the host to your journey.-->
-<!--							</p>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-			<div class="owl-thumbs d-flex justify-content-center" data-slider-id="1">
-				<div class="owl-thumb-item">
-					<div>
-						<img class="img-fluid" src="{% static 'img/testimonial/t1.png' %}" alt="">
-					</div>
-					<div class="overlay overlay-grad"></div>
-				</div>
-				<div class="owl-thumb-item">
-					<div>
-						<img class="img-fluid" src="{% static 'img/testimonial/t2.png' %}" alt="">
-					</div>
-					<div class="overlay overlay-grad"></div>
-				</div>
-				<div class="owl-thumb-item">
-					<div>
-						<img class="img-fluid" src="{% static 'img/testimonial/t3.png' %}" alt="">
-					</div>
-					<div class="overlay overlay-grad"></div>
-				</div>
-				<div class="owl-thumb-item">
-					<div>
-						<img class="img-fluid" src="{% static 'img/testimonial/t4.png' %}" alt="">
-					</div>
-					<div class="overlay overlay-grad"></div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<!--================End Testimonials Area =================-->
 
 	<!--================Latest Blog Area =================-->
-	<section class="latest_blog_area section_gap color-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12" id="hotspots">
-					<div style="text-align:center;" class="sub_title">
-						<p style="color:orange;">Explore</p>
-						<h2>
-							TOP TOURIST HOTSPOTS NEARBY
-						</h2><br><br><br><br>
+	<section class="latest_blog_area section_gap color-bg" style="background-color: #f9f9f9; padding: 0px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" id="hotspots">
+                <div style="text-align:center;" class="sub_title">
+                    <p style="color: orange; font-weight: bold; font-size: 2em;">Explore</p>
+                    <h2 style="font-size: 2.5em; font-weight: bold; color: #333;">TOP TOURIST HOTSPOTS NEARBY</h2>
+                    <br><br>
+                </div>
+            </div>
+        </div>
 
-					</div>
-				</div>
-			</div>
+        <div class="row">
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/beach.jpg' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">KOZHIKODE BEACH</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">Kozhikode Beach offers a memorable experience that captures the essence of Kerala's coastal charm.</p>
+                </div>
+            </div>
 
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/palayam.png' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">PALAYAM</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">Palayam is a vibrant commercial and business district, housing numerous shops, restaurants, banks, and commercial establishments.</p>
+                </div>
+            </div>
 
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/mananchira-square.png' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">MANANCHIRA SQUARE</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">Mananchira Square entices visitors with its serene ambiance, historical significance, and architectural splendor.</p>
+                </div>
+            </div>
+        </div>
 
-			<div class="row">
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/beach.jpg' %}" alt="">
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-<!--						<div>-->
-<!--							<a href="#" class="main_btn">Travel</a>-->
-<!--						</div>-->
-<!--						<div class="meta">-->
-<!--&lt;!&ndash;							<span>30th Sep, 2018</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span>02 Comments</span>&ndash;&gt;-->
-<!--						</div>-->
-					</div>
-					<a >
-						<h4>KOZHIKODE BEACH</h4>
-					</a>
-					<p>Kozhikode Beach offers a memorable experience that captures the essence of Kerala's coastal charm.
-					</p>
-				</div>
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/palayam.png' %}" alt="" >
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-						<div>
-<!--							<a href="#" class="main_btn">Travel</a>-->
-						</div>
-						<div class="meta">
-<!--							<span>30th Sep, 2018</span>-->
-<!--							<span>02 Comments</span>-->
-						</div>
-					</div>
-					<a >
-						<h4>PALAYAM</h4>
-					</a>
-					<p>Palayam is a vibrant commerical and business district,housing numerous shops,restaurants,banks,and commerical establishments.
-					</p>
-				</div>
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/mananchira-square.png' %}" alt="">
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-<!--						<div>-->
-<!--							<a href="#" class="main_btn">Travel</a>-->
-<!--						</div>-->
-<!--						<div class="meta">-->
-<!--&lt;!&ndash;							<span>30th Sep, 2018</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span>02 Comments</span>&ndash;&gt;-->
-<!--						</div>-->
-					</div>
-					<a >
-						<h4>MANANCHIRA SQUARE</h4>
-					</a>
-					<p>Mananchira Square entices visitors with its serene ambiance,
-						historical significance,and architechtural splendor.
-					</p>
-				</div>
-			</div>
+        <br>
 
-			<br><br><br>
+        <div class="row">
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/tali-temple.png' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">TALI TEMPLE</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">The Tali Temple, also known as Tali Mahadeva Temple, has a rich history dating back over a thousand years.</p>
+                </div>
+            </div>
 
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/mutai-thruv.png' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">MUTTAI THERUVU</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">Muttai Theruvu, or Sweet Meat Street, is a bustling culinary and shopping destination renowned for its traditional sweets, savory snacks, and vibrant street life.</p>
+                </div>
+            </div>
 
-			<div class="row">
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/tali-temple.png' %}" alt="">
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-<!--						<div>-->
-<!--							<a  class="main_btn">Travel</a>-->
-<!--						</div>-->
-<!--						<div class="meta">-->
-<!--&lt;!&ndash;							<span>30th Sep, 2018</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span>02 Comments</span>&ndash;&gt;-->
-<!--						</div>-->
-					</div>
-					<a >
-						<h4>TALI TEMPLE</h4>
-					</a>
-					<p>The Tali Temple,also knows as Tali Mahadeva Temple,has a rich history dating back over a thusand years.
-					</p>
-				</div>
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/mutai-thruv.png' %}" alt="" >
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-<!--						<div>-->
-<!--							<a  class="main_btn">Travel</a>-->
-<!--						</div>-->
-<!--						<div class="meta">-->
-<!--&lt;!&ndash;							<span>30th Sep, 2018</span>&ndash;&gt;-->
-<!--&lt;!&ndash;							<span>02 Comments</span>&ndash;&gt;-->
-<!--						</div>-->
-					</div>
-					<a >
-						<h4>MUTTAI THERUVU</h4>
-					</a>
-					<p>Muttai Theruvu,or Sweet Meat Street,in Kozhikode,Kerala, is a bustling culinary and shopping destination renowned for its traditional sweets,savory snacks,and vibrant street life.
-					</p>
-				</div>
-				<div class="single-recent-blog col-lg-4 col-md-6">
-					<div class="thumb">
-						<img class="f-img img-fluid mx-auto" src="{% static 'img/kozhikode_town.jpeg' %}" alt="">
-					</div>
-					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-<!--						<div>-->
-<!--							<a  class="main_btn">Travel</a>-->
-<!--						</div>-->
-<!--						<div class="meta">-->
-<!--							<span>30th Sep, 2018</span>-->
-<!--							<span>02 Comments</span>-->
-<!--						</div>-->
-					</div>
-					<a >
-						<h4>KOZHIKODE RALIWAY STATION</h4>
-					</a>
-					<p>
-						Kozhikode,historically known as a major trading port in india,has a long association with indian Raliways.
-						The station has been operational for several decades and has played a vital role in enhancing connectivity across Kerala and other states.
+            <div class="single-recent-blog col-lg-4 col-md-6" style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{% static 'img/kozhikode_town.jpeg' %}" alt="" style="width: 100%; height: auto;">
+                </div>
+                <div class="content" style="padding: 20px;">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <h4 style="font-size: 1.5em; margin-bottom: 10px;">KOZHIKODE RAILWAY STATION</h4>
+                    </a>
+                    <p style="font-size: 1em; color: #666;">Kozhikode, historically known as a major trading port in India, has a long association with Indian Railways. The station has been operational for several decades and has played a vital role in enhancing connectivity across Kerala and other states.</p>
+                </div>
+            </div>
+        </div>
 
-					</p>
-				</div>
-			</div>
+    </div>
+</section>
+
+<div class="container-fluid" id="contact" style="padding: 20px 0 50px; background-color: #f9f9f9; text-align: center;">
+    <i class="bi bi-chat-fill" style="font-size: 3em; color: #333;"></i>
+    <h2 style="font-size: 2.8em; color: #333; margin-top: 20px; font-weight: bold;">Contact Us to Book Your Room</h2>
+    <p style="font-size: 1.2em; color: #555; max-width: 650px; margin: 20px auto;">
+        Contact us today to book your stay or inquire about our facilities and services.
+        Our friendly team is here to assist you and ensure a seamless and memorable stay experience.
+    </p>
+
+    <div class="list-group" style="max-width: 450px; margin: auto;">
+        <a href="https://wa.me/918891966916" class="list-group-item list-group-item-action" style="background-color: #25D366; color: white; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; transition: background-color 0.3s; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);"
+           onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.7)';" onmouseout="this.style.backgroundColor='#25D366';">
+            <i class="bi bi-whatsapp" style="font-size: 1.5em; margin-right: 15px;"></i>
+            <span style="font-size: 1.1em; font-weight: 500;">WhatsApp or Phone: +91 8891966916</span>
+        </a>
+        <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action" style="background-color: #007BFF; color: white; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; transition: background-color 0.3s; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);"
+           onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.7)';" onmouseout="this.style.backgroundColor='#007BFF';">
+            <i class="bi bi-envelope-fill" style="font-size: 1.5em; margin-right: 15px;"></i>
+            <span style="font-size: 1.1em; font-weight: 500;">Email: omkaartouristhome@gmail.com</span>
+        </a>
+        <div class="list-group-item" style="background-color: #f8f9fa; color: #333; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <i class="bi bi-geo-alt-fill" style="font-size: 1.5em; margin-right: 15px;"></i>
+            <span style="font-size: 1.1em; font-weight: 500;">Office Address: Omkaar Tourist Home,<br>
+            Near Mariyamman Kovil,<br>
+            Tali Cross Road Palayam -<br>
+            673002, Calicut, India</span>
+        </div>
+    </div>
+</div>
 
 
-
-
-		</div>
-	</section>
-
-	<div class="container-fluid row"  style="padding-top:150px;padding-bottom:150px;">
-		<div class="col-6">
-			<h2>Get In Touch</h2> <br><br>
-			Contact us today to book your stay or inquire about our facilities and services. Our friendly team is here to assist you and ensure a seamless and memorable stay experience.
-			<br>
-
-			 <div class="container mt-5" id="contact">
-        <h2>Contact Information</h2> <br><br>
-        <div class="list-group" style=" background-color: transparent;border:none;">
-            <a href="tel:+918891966916" class="list-group-item list-group-item-action" style=" background-color: transparent;border:none;">
-                <i class="bi bi-telephone-fill"></i> Whatsapp Number: +91 8891 9669 16
-            </a>
-            <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action" style=" background-color: transparent;border:none;">
-                <i class="bi bi-envelope-fill"></i> Email: omkaartouristhome@gmail.com
-            </a>
-            <div class="list-group-item" style=" background-color: transparent;border:none;">
-                <i class="bi bi-geo-alt-fill"></i> Office Address: Omkaar Tourist Home, Near Mariyamman Kovil, Tali Cross Road Palayam - 673002, Calicut, India
+<!--================ start footer Area  =================-->
+<footer class="footer-area section_gap" style="margin-top: 100px; background-color: #333; padding: 50px 0; color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="single-footer-widget">
+                    <h6 style="margin-bottom: 20px;">Information</h6>
+                    <a href="tel:+918891966916" class="list-group-item list-group-item-action" style="background-color: transparent; border: none; color: white; padding: 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='orange';" onmouseout="this.style.color='white';">
+                        <i class="bi bi-telephone-fill" style="font-size: 1em;"></i> +91 8891 9669 16
+                    </a>
+                    <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action" style="background-color: transparent; border: none; color: white; padding: 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='orange';" onmouseout="this.style.color='white';">
+                        <i class="bi bi-envelope-fill" style="font-size: 1em;"></i> omkaartouristhome@gmail.com
+                    </a>
+                    <div class="list-group-item" style="background-color: transparent; border: none; color: white; padding: 10px;">
+                        <p style="color: white; margin: 0;">
+                            <i class="bi bi-geo-alt-fill"></i> Omkaar Tourist Home, Near Mariyamman Kovil, Tali Cross Road Palayam - 673002, Calicut, India
+                        </p>
+                    </div>
+                    <p style="color: white; margin-top: 20px;">Copyright © 2024</p>
+                </div>
             </div>
         </div>
     </div>
+</footer>
 
 
 
-		</div>
-
-		<div class="col-6">
-			<h2>Send Message</h2> <br><br>
-
-<!--form-->
-
-    <div class="container mt-5">
-        <form>
-            <div class="row mb-3">
-                <!-- Full Name Field -->
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-user"></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Full Name" aria-label="Full Name">
-                    </div>
-                </div>
-                <!-- Email Address Field -->
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                        <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phone Number Field -->
-            <div class="mb-3">
-                <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="fas fa-phone"></i>
-                    </span>
-                    <input type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
-                </div>
-            </div>
-
-            <!-- Comments Field -->
-            <div class="mb-3">
-                <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="fas fa-comments"></i>
-                    </span>
-                    <textarea class="form-control" placeholder="Type your comments" aria-label="Comments"></textarea>
-                </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="d-grid">
-                <button type="submit" class="btn btn-warning btn-block" style="background-color:orange;font-size:20px;color:white;">SUBMIT NOW</button>
-            </div>
-        </form>
-    </div>
-
-
-
-
-		</div>
-
-	</div>
-
-
-
-
-	<!--================End Latest Blog Area =================-->
-
-	<!--================ start footer Area  =================-->
-	<footer class="footer-area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-6">
-					<div class="single-footer-widget">
-						<h6>Information</h6>
-            <a href="tel:+918891966916" class="list-group-item list-group-item-action" style="  background-color: transparent;border:none;">
-				<p style="color:white;"><i class="bi bi-telephone-fill"></i>+91 8891 9669 16</p>
-            </a>
-            <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action " style="background-color: transparent;border:none;">
-                <p style="color:white;"><i class="bi bi-envelope-fill"></i>omkaartouristhome@gmail.com</p>
-            </a>
-            <div class="list-group-item" style="background-color: transparent;border:none;">
-                <p style="color:white;"><i class="bi bi-geo-alt-fill"></i>Omkaar Tourist Home, Near Mariyamman Kovil, Tali Cross Road Palayam - 673002, Calicut, India</p>
-            </div>
-<!--						 <div class="list-group-item" style="background-color: transparent;border:none;">-->
-               <br><br><br><br><br>
-
-                <p style="color:white;">Copyright © 2024</p>
-            </div>
-
-
-
-        </div>
-					</div>
-				</div>
-
-<!--				<div class="col-4">-->
-<!--					<div class="single-footer-widget">-->
-<!--						<h6>Quick Links</h6>-->
-<!--						<div class="row">-->
-<!--							<ul class="col footer-nav">-->
-<!--								<li><a href="#">Sitemaps</a></li>-->
-<!--								<li><a href="#">Categories</a></li>-->
-<!--								<li><a href="#">Archives</a></li>-->
-<!--								<li><a href="#">Advertise</a></li>-->
-<!--								<li><a href="#">Ad Choice</a></li>-->
-<!--							</ul>-->
-<!--							<ul class="col footer-nav">-->
-<!--								<li><a href="#">Privacy Policy</a></li>-->
-<!--								<li><a href="#">Terms of Use</a></li>-->
-<!--								<li><a href="#">Help Center</a></li>-->
-<!--								<li><a href="#">Newsletters</a></li>-->
-<!--								<li><a href="#">Feedback</a></li>-->
-<!--							</ul>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-
-<!--				<div class="col">-->
-<!--					<div class="single-footer-widget">-->
-<!--						<h6>Subscribe</h6>-->
-<!--&lt;!&ndash;						<p>For business professionals caught between high OEM price mediocre print and graphic.</p>&ndash;&gt;-->
-<!--						<div class="" id="mc_embed_signup">-->
-
-<!--							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"-->
-<!--							 method="get" class="form-inline">-->
-
-<!--								<div class="d-flex flex-row">-->
-
-<!--									<input class="form-control" name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"-->
-<!--									 required="" type="email">-->
-
-
-<!--									<button class="click-btn btn btn-default"><i class="lnr lnr-location" aria-hidden="true"></i></button>-->
-<!--									<div style="position: absolute; left: -5000px;">-->
-<!--										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">-->
-<!--									</div>-->
-
-<!--									&lt;!&ndash; <div class="col-lg-4 col-md-4">-->
-<!--										<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>-->
-<!--									</div>  &ndash;&gt;-->
-<!--								</div>-->
-<!--								<div class="info"></div>-->
-<!--							</form>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-lg-3  col-md-6 col-sm-6">-->
-<!--&lt;!&ndash;					<div class="single-footer-widget mail-chimp">&ndash;&gt;-->
-<!--&lt;!&ndash;						<h6 class="mb-20">Instafeed</h6>&ndash;&gt;-->
-<!--&lt;!&ndash;						<ul class="instafeed d-flex flex-wrap">&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-01.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-02.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-03.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-04.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-05.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-06.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-07.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;							<li><img src="{% static 'img/instagram/Image-08.jpg' %}" alt=""></li>&ndash;&gt;-->
-<!--&lt;!&ndash;						</ul>&ndash;&gt;-->
-<!--&lt;!&ndash;					</div>&ndash;&gt;-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">-->
-<!--				<div>-->
-<!--					<p class="footer-text m-0">-->
-<!--						-->
-
-<!--						&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
-<!--&lt;!&ndash;Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>&ndash;&gt;-->
-<!--&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>-->
-<!--				</div>-->
-<!--				<div class="footer-social d-flex align-items-center">-->
-<!--&lt;!&ndash;					<a href="#"><i class="fa fa-facebook"></i></a>&ndash;&gt;-->
-<!--					<a href="#"><i class="fa fa-twitter"></i></a>-->
-<!--					<a href="#"><i class="fa fa-dribbble"></i></a>-->
-<!--					<a href="#"><i class="fa fa-behance"></i></a>-->
-<!--				</div>-->
-			</div>
-		</div>
-	</footer>
 	<!--================ End footer Area  =================-->
 
 
