@@ -5,8 +5,8 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
-	<title>Radisson Hotel</title>
+	<link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+	<title>Omkaar Tourist Home</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -38,7 +38,7 @@
 
 		<div class="main_menu">
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000; height: 130px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000; height: 180px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
     <div class="container">
         <a class="navbar-brand logo_h" href="index.html">
             <img src="/static/img/logo.png" alt="" style="height: 100%; max-height: 100px;"/>
@@ -47,7 +47,7 @@
             <span class="navbar-toggler-icon" style="background-color: white;"></span>
         </button>
         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto">
+            <ul class="nav navbar-nav menu_nav ml-auto align-items-center">
                 <li class="nav-item active">
                     <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
                 </li>
@@ -60,13 +60,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
                 </li>
-                <li class="nav-item" style="background-color:blue;">
-                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">Book Your Room &#8594;</a>
+                <li class="nav-item">
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="color: white; background-color: blue; margin-left: 20px; padding: 15px 20px; border-radius: 5px; font-size: 18px; text-decoration: none;  display: inline-block;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">BOOK YOUR ROOM</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 		</div>
 	</header>
@@ -74,16 +75,25 @@
 
 	<!--================Home Banner Area =================-->
 	<section class="home_banner_area">
-		<div class="banner_inner d-flex align-items-center">
-			<div class="overlay bg-parallax" data-stellar-ratio="2" data-stellar-vertical-offset="0" data-background=""></div>
-			<div class="container">
-				<div class="banner_content text-center">
-					<h1>OMKAAR </h1>
-					<h2>Tourist Home</h2>
-				</div>
-			</div>
-		</div>
-	</section>
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="2" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <h1 style="font-size: 6em; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.1)';"
+                    onmouseout="this.style.transform='scale(1)';">
+                    OMKAAR
+                </h1>
+                <h2 style="font-size: 3em; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.1)';"
+                    onmouseout="this.style.transform='scale(1)';">
+                    Tourist Home
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
 	<!--================End Home Banner Area =================-->
 
 
@@ -138,7 +148,7 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Double Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our beautifully appointed double bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
-                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                     <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
                 </div>
             </div>
         </div>
@@ -155,7 +165,7 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Triple Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious triple bed room, perfect for families, friends, or groups traveling together. This thoughtfully designed room provides ample space and comfort for up to three guests, ensuring a restful stay.</p>
-                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                          <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
                 </div>
             </div>
         </div>
@@ -172,7 +182,7 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Four Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious four bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
-                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                          <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
                 </div>
             </div>
         </div>
@@ -189,7 +199,7 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Dormitory</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our vibrant and welcoming dormitory, designed for budget travelers, students, or groups looking for affordable yet comfortable accommodations. Our dormitory offers a social atmosphere where guests can meet, share experiences, and make lasting memories.</p>
-                    <a href="{% url 'check_availability' %}" class="main_btn" style="background-color: orange; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">CHECK AVAILABILITY</a>
+                    <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
                 </div>
             </div>
         </div>
@@ -239,7 +249,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/beach.jpg' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://en.wikipedia.org/wiki/Kozhikode_Beach" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">KOZHIKODE BEACH</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">Kozhikode Beach offers a memorable experience that captures the essence of Kerala's coastal charm.</p>
@@ -251,7 +261,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/palayam.png' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://ml.wikipedia.org/wiki/%E0%B4%AA%E0%B4%BE%E0%B4%B3%E0%B4%AF%E0%B4%82_(%E0%B4%95%E0%B5%8B%E0%B4%B4%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%8B%E0%B4%9F%E0%B5%8D)" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">PALAYAM</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">Palayam is a vibrant commercial and business district, housing numerous shops, restaurants, banks, and commercial establishments.</p>
@@ -263,7 +273,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/mananchira-square.png' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://en.wikipedia.org/wiki/Mananchira" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">MANANCHIRA SQUARE</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">Mananchira Square entices visitors with its serene ambiance, historical significance, and architectural splendor.</p>
@@ -279,7 +289,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/tali-temple.png' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://en.wikipedia.org/wiki/Tali_Shiva_Temple" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">TALI TEMPLE</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">The Tali Temple, also known as Tali Mahadeva Temple, has a rich history dating back over a thousand years.</p>
@@ -291,7 +301,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/mutai-thruv.png' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://ml.wikipedia.org/wiki/%E0%B4%AE%E0%B4%BF%E0%B4%A0%E0%B4%BE%E0%B4%AF%E0%B4%BF%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B5%86%E0%B4%B0%E0%B5%81%E0%B4%B5%E0%B5%8D" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">MUTTAI THERUVU</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">Muttai Theruvu, or Sweet Meat Street, is a bustling culinary and shopping destination renowned for its traditional sweets, savory snacks, and vibrant street life.</p>
@@ -303,7 +313,7 @@
                     <img class="f-img img-fluid mx-auto" src="{% static 'img/kozhikode_town.jpeg' %}" alt="" style="width: 100%; height: auto;">
                 </div>
                 <div class="content" style="padding: 20px;">
-                    <a href="#" style="text-decoration: none; color: #333;">
+                    <a href="https://en.wikipedia.org/wiki/Kozhikode_railway_station" style="text-decoration: none; color: #333;">
                         <h4 style="font-size: 1.5em; margin-bottom: 10px;">KOZHIKODE RAILWAY STATION</h4>
                     </a>
                     <p style="font-size: 1em; color: #666;">Kozhikode, historically known as a major trading port in India, has a long association with Indian Railways. The station has been operational for several decades and has played a vital role in enhancing connectivity across Kerala and other states.</p>
@@ -314,62 +324,86 @@
     </div>
 </section>
 
-<div class="container-fluid" id="contact" style="padding: 20px 0 50px; background-color: #f9f9f9; text-align: center;">
+<!--contact section    -->
+
+<div class="container-fluid" id="contact" style="padding: 40px 0; background-color: #f8f9fa; text-align: center;">
     <i class="bi bi-chat-fill" style="font-size: 3em; color: #333;"></i>
-    <h2 style="font-size: 2.8em; color: #333; margin-top: 20px; font-weight: bold;">Contact Us to Book Your Room</h2>
-    <p style="font-size: 1.2em; color: #555; max-width: 650px; margin: 20px auto;">
+    <h2 class="display-4 text-dark mt-3 font-weight-bold">Contact Us to Book Your Room</h2>
+    <p class="lead mx-auto" style="max-width: 650px;">
         Contact us today to book your stay or inquire about our facilities and services.
         Our friendly team is here to assist you and ensure a seamless and memorable stay experience.
     </p>
 
-    <div class="list-group" style="max-width: 450px; margin: auto;">
-        <a href="https://wa.me/918891966916" class="list-group-item list-group-item-action" style="background-color: #25D366; color: white; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; transition: background-color 0.3s; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);"
-           onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.7)';" onmouseout="this.style.backgroundColor='#25D366';">
-            <i class="bi bi-whatsapp" style="font-size: 1.5em; margin-right: 15px;"></i>
-            <span style="font-size: 1.1em; font-weight: 500;">WhatsApp or Phone: +91 8891966916</span>
+    <div class="list-group mx-auto" style="max-width: 450px;">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/918891966916" class="btn btn-success d-flex align-items-center justify-content-center text-white mb-3 shadow-lg"
+            style="border-radius: 10px; padding: 15px; transition: background-color 0.3s, transform 0.3s;"
+            onmouseover="this.style.backgroundColor='#28a745'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.backgroundColor='#25D366'; this.style.transform='scale(1)';">
+            <i class="bi bi-whatsapp mr-3" style="font-size: 1.5em;"></i>
+            <span style="font-size: 1.2em; font-weight: 500;">WhatsApp or Phone: +91 8891966916</span>
         </a>
-        <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action" style="background-color: #007BFF; color: white; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; transition: background-color 0.3s; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);"
-           onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.7)';" onmouseout="this.style.backgroundColor='#007BFF';">
-            <i class="bi bi-envelope-fill" style="font-size: 1.5em; margin-right: 15px;"></i>
-            <span style="font-size: 1.1em; font-weight: 500;">Email: omkaartouristhome@gmail.com</span>
+
+        <!-- Email Button -->
+        <a href="mailto:omkaartouristhome@gmail.com" class="btn btn-primary d-flex align-items-center justify-content-center text-white mb-3 shadow-lg"
+            style="border-radius: 10px; padding: 15px; transition: background-color 0.3s, transform 0.3s;"
+            onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';">
+            <i class="bi bi-envelope-fill mr-3" style="font-size: 1.5em;"></i>
+            <span style="font-size: 1.2em; font-weight: 500;">Email: omkaartouristhome@gmail.com</span>
         </a>
-        <div class="list-group-item" style="background-color: #f8f9fa; color: #333; border-radius: 5px; margin: 20px 0; padding: 15px; display: flex; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-            <i class="bi bi-geo-alt-fill" style="font-size: 1.5em; margin-right: 15px;"></i>
-            <span style="font-size: 1.1em; font-weight: 500;">Office Address: Omkaar Tourist Home,<br>
-            Near Mariyamman Kovil,<br>
-            Tali Cross Road Palayam -<br>
-            673002, Calicut, India</span>
+
+        <!-- Office Address -->
+        <div class="btn btn-light d-flex align-items-center justify-content-center shadow-lg"
+            style="border-radius: 10px; padding: 15px; transition: transform 0.3s;"
+            onmouseover="this.style.transform='scale(1.05)';"
+            onmouseout="this.style.transform='scale(1)';">
+            <i class="bi bi-geo-alt-fill mr-3" style="font-size: 1.5em; color: #333;"></i>
+            <span style="font-size: 1.2em; font-weight: 500;">Office Address: Omkaar Tourist Home,<br> Near Mariyamman Kovil,<br> Tali Cross Road Palayam -<br>673002, Calicut, India</span>
         </div>
     </div>
 </div>
+
+
+<!--contact section ends-->
+
+
+
 
 
 <!--================ start footer Area  =================-->
 <footer class="footer-area section_gap" style="margin-top: 100px; background-color: #333; padding: 50px 0; color: white;">
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="single-footer-widget">
-                    <h6 style="margin-bottom: 20px;">Information</h6>
-                    <a href="tel:+918891966916" class="list-group-item list-group-item-action" style="background-color: transparent; border: none; color: white; padding: 10px; transition: color 0.3s;"
+                    <h6 class="text-uppercase" style="margin-bottom: 25px; font-weight: bold; color: #ffcc00;">Information</h6>
+
+                    <a href="tel:+918891966916" class="d-flex align-items-center mb-3" style="text-decoration: none; color: white; transition: color 0.3s;"
                        onmouseover="this.style.color='orange';" onmouseout="this.style.color='white';">
-                        <i class="bi bi-telephone-fill" style="font-size: 1em;"></i> +91 8891 9669 16
+                        <i class="bi bi-telephone-fill mr-2" style="font-size: 1.3em; color: #ffcc00; transition: transform 0.3s;" onmouseover="this.style.color='orange';" onmouseout="this.style.color='#ffcc00';"></i>
+                        <span style="font-size: 1.1em;">+91 8891 9669 16</span>
                     </a>
-                    <a href="mailto:omkaartouristhome@gmail.com" class="list-group-item list-group-item-action" style="background-color: transparent; border: none; color: white; padding: 10px; transition: color 0.3s;"
+
+                    <a href="mailto:omkaartouristhome@gmail.com" class="d-flex align-items-center mb-3" style="text-decoration: none; color: white; transition: color 0.3s;"
                        onmouseover="this.style.color='orange';" onmouseout="this.style.color='white';">
-                        <i class="bi bi-envelope-fill" style="font-size: 1em;"></i> omkaartouristhome@gmail.com
+                        <i class="bi bi-envelope-fill mr-2" style="font-size: 1.3em; color: #ffcc00; transition: transform 0.3s;" onmouseover="this.style.color='orange';" onmouseout="this.style.color='#ffcc00';"></i>
+                        <span style="font-size: 1.1em;">omkaartouristhome@gmail.com</span>
                     </a>
-                    <div class="list-group-item" style="background-color: transparent; border: none; color: white; padding: 10px;">
-                        <p style="color: white; margin: 0;">
-                            <i class="bi bi-geo-alt-fill"></i> Omkaar Tourist Home, Near Mariyamman Kovil, Tali Cross Road Palayam - 673002, Calicut, India
-                        </p>
+
+                    <div class="d-flex align-items-start" style="color: white; transition: color 0.3s;"
+                         onmouseover="this.style.color='orange';" onmouseout="this.style.color='white';">
+                        <i class="bi bi-geo-alt-fill mr-2" style="font-size: 1.3em; color: #ffcc00; transition: transform 0.3s;" onmouseover="this.style.color='orange';" onmouseout="this.style.color='#ffcc00';"></i>
+                        <p style="margin: 0; font-size: 1.1em;">Omkaar Tourist Home, Near Mariyamman Kovil, <br> Tali Cross Road Palayam - 673002, Calicut, India</p>
                     </div>
-                    <p style="color: white; margin-top: 20px;">Copyright © 2024</p>
+
+                    <p class="mt-4" style="color: #ccc;">Copyright © 2024. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
 
 
 
