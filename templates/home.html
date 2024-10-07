@@ -5,11 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
-	<link rel="icon" href="{% static 'img/title_logo.png' %}" type="image/png">
-=======
 	<link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
->>>>>>> 597f4a24b1a1dc6a53d14ab5d02a7f001c871fda
 	<title>Omkaar Tourist Home</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -42,35 +38,47 @@
 
 		<div class="main_menu">
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000; height: 180px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000; height: 100px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">
     <div class="container">
+        <!-- Logo -->
         <a class="navbar-brand logo_h" href="index.html">
-            <img src="/static/img/logo.png" alt="" style="height: 100%; max-height: 100px;"/>
+            <img src="/static/img/logo.png" alt="" style="height: 80px; max-height: 80px;"/>
         </a>
+
+        <!-- Toggler Button for Mobile View -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
-            <span class="navbar-toggler-icon" style="background-color: white;"></span>
+            <span class="navbar-toggler-icon" style="background-color: white; width: 30px; height: 30px; background-size: cover;"></span>
         </button>
-        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto align-items-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto d-flex align-items-center" style="display: flex; align-items: center; margin-left: auto;">
+                <!-- Home -->
+                <li class="nav-item active" style="margin-right: 15px;">
+                    <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#rooms" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">ROOMS</a>
+                <!-- Rooms -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#rooms" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">ROOMS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#hotspots" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOTSPOTS NEARBY</a>
+                <!-- Hotspots -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#hotspots" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOTSPOTS NEARBY</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px;font-size:18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
+                <!-- Contact -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
                 </li>
+                <!-- Book Your Room Button -->
                 <li class="nav-item">
-                    <a href="{% url 'check_availability' %}" class="main_btn" style="color: white; background-color: blue; margin-left: 20px; padding: 15px 20px; border-radius: 5px; font-size: 18px; text-decoration: none;  display: inline-block;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">BOOK YOUR ROOM</a>
+                    <a href="{% url 'check_availability' %}" class="btn btn-primary" style="color: white; padding: 10px 25px; border-radius: 5px; font-size: 18px; background-color: #007bff; text-decoration: none; margin-left: 20px;" onmouseover="this.style.backgroundColor='orange'; this.style.color='white';" onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';">BOOK YOUR ROOM</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+
 
 
 		</div>
@@ -149,9 +157,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="room_right" style="padding: 20px;">
-                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Double Bed Room</h2>
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Couple Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
-                    <p style="color: #555;">Welcome to our beautifully appointed double bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
+                    <p style="color: #555;">Welcome to our beautifully appointed Couple bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
                      <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
                 </div>
             </div>
@@ -190,6 +198,23 @@
                 </div>
             </div>
         </div>
+                <div class="row align-items-center" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="room_left">
+                    <img class="img-fluid" src="{% static 'img/room/four_bed_room.jpg' %}" alt="" style="border-radius: 10px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room_right" style="padding: 20px;">
+                    <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Six Bed Room</h2>
+                    <p style="color: orange; font-weight: bold;">AC/Non AC</p>
+                    <p style="color: #555;">Welcome to our spacious six bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
+                          <a href="{% url 'check_availability' %}" class="main_btn" style="  padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- Room 4 -->
         <div class="row align-items-center" style="margin-top: 50px;">
