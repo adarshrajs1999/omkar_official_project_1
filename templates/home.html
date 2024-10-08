@@ -109,7 +109,25 @@
                 </li>
                 <!-- Book Your Room Button -->
                 <li class="nav-item">
-                    <a href="{% url 'check_availability' %}" class="btn btn-primary" style="color: white; padding: 10px 25px; border-radius: 5px; font-size: 18px; background-color: #007bff; text-decoration: none; margin-left: 20px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='orange'; this.style.color='white';" onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';">BOOK YOUR ROOM</a>
+
+<div class="dropdown">
+<!--        <label for="options">Choose an option:</label>-->
+    <form id="bookingForm" method="POST">
+        {% csrf_token %}
+    <select id="options" onchange="submitForm()">
+        <option value="" disabled selected>Book Your Room</option>
+        <option value="{% url 'book_couple_room' %}">Couple Room</option>
+        <option value="{% url 'book_Family_room' %}">Family Room</option>
+        <option value="{% url 'book_Group_room' %}">Group Room</option>
+        <option value="{% url 'book_Six_room' %}">Six Bed Room</option>
+        <option value="{% url 'book_Dormitory' %}">Dormitory</option>
+    </select>
+</form>
+    </div>
+
+
+
+
 
                 </li>
             </ul>
@@ -592,6 +610,7 @@
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 	<script src="{% static 'js/jquery.min.js' %}"></script>
 	<script src="{% static 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' %}"></script>
 	<script src="{% static 'js/popper.js' %}"></script>
@@ -610,6 +629,16 @@
 	<script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
 	<script src="{% static 'js/mail-script.js' %}"></script>
 	<script src="{% static 'js/theme.js' %}"></script>
+<script>
+function submitForm() {
+    var select = document.getElementById("options");
+    var value = select.value;
+    if (value) {
+        document.getElementById("bookingForm").action = value;
+        document.getElementById("bookingForm").submit();
+    }
+}
+</script>
 
 </body>
 
