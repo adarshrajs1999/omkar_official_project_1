@@ -28,6 +28,44 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+    <style>
+    /* Media query for smaller screens */
+    @media (max-width: 991px) {
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav {
+            display: block;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+</style>
 
 </head>
 
@@ -77,49 +115,6 @@
         </div>
     </div>
 </nav>
-
-<style>
-    /* Media query for smaller screens */
-    @media (max-width: 991px) {
-        .navbar-brand img {
-            height: 60px;
-        }
-
-        .navbar-nav .nav-item {
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-
-        .btn-primary {
-            margin-left: 0;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .navbar-brand img {
-            height: 50px;
-        }
-
-        .navbar-nav {
-            display: block;
-            text-align: center;
-        }
-
-        .navbar-nav .nav-item {
-            margin-bottom: 10px;
-        }
-
-        .btn-primary {
-            display: block;
-            width: 100%;
-            margin-top: 10px;
-        }
-    }
-</style>
-
-
-
-
 
 		</div>
 	</header>
