@@ -42,12 +42,12 @@
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand logo_h" href="index.html">
-            <img src="/static/img/logo.png" alt="" style="height: 80px; max-height: 80px;"/>
+            <img src="/static/img/logo.png" alt="Logo" style="height: 80px; max-height: 80px;" />
         </a>
 
         <!-- Toggler Button for Mobile View -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
-            <span class="navbar-toggler-icon" style="background-color: white; width: 30px; height: 30px; background-size: cover;"></span>
+            <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3E%3Cpath stroke=%27rgba(255, 255, 255, 1)%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E'); background-size: 30px 30px;"></span>
         </button>
 
         <!-- Navbar Links -->
@@ -55,28 +55,68 @@
             <ul class="navbar-nav ms-auto d-flex align-items-center" style="display: flex; align-items: center; margin-left: auto;">
                 <!-- Home -->
                 <li class="nav-item active" style="margin-right: 15px;">
-                    <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
+                    <a class="nav-link" href="#" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOME</a>
                 </li>
                 <!-- Rooms -->
                 <li class="nav-item" style="margin-right: 15px;">
-                    <a class="nav-link" href="#rooms" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">ROOMS</a>
+                    <a class="nav-link" href="#rooms" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">ROOMS</a>
                 </li>
                 <!-- Hotspots -->
                 <li class="nav-item" style="margin-right: 15px;">
-                    <a class="nav-link" href="#hotspots" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOTSPOTS NEARBY</a>
+                    <a class="nav-link" href="#hotspots" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">HOTSPOTS NEARBY</a>
                 </li>
                 <!-- Contact -->
                 <li class="nav-item" style="margin-right: 15px;">
-                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
+                    <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
                 </li>
                 <!-- Book Your Room Button -->
                 <li class="nav-item">
-                    <a href="{% url 'check_availability' %}" class="btn btn-primary" style="color: white; padding: 10px 25px; border-radius: 5px; font-size: 18px; background-color: #007bff; text-decoration: none; margin-left: 20px;" onmouseover="this.style.backgroundColor='orange'; this.style.color='white';" onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';">BOOK YOUR ROOM</a>
+                    <a href="{% url 'check_availability' %}" class="btn btn-primary" style="color: white; padding: 10px 25px; border-radius: 5px; font-size: 18px; background-color: #007bff; text-decoration: none; margin-left: 20px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='orange'; this.style.color='white';" onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';">BOOK YOUR ROOM</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<style>
+    /* Media query for smaller screens */
+    @media (max-width: 991px) {
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav {
+            display: block;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+</style>
+
 
 
 
