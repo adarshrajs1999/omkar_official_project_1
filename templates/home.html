@@ -634,6 +634,7 @@ function submitForm() {
     var select = document.getElementById("options");
     var value = select.value;
     if (value) {
+        // Change the form's action to the selected URL and submit the form
         document.getElementById("bookingForm").action = value;
         document.getElementById("bookingForm").submit();
     }
