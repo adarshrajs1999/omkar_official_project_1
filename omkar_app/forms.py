@@ -28,6 +28,10 @@ class BookingForm(forms.ModelForm):
         fields = ['name', 'address', 'phone', 'email','check_in','check_out']
 
 
+class ValidationError:
+    pass
+
+
 class CoupleRoomForm(forms.ModelForm):
     class Meta:
         model = Couple_Room  # Link the form to the Couple_Room model
@@ -46,8 +50,18 @@ class CoupleRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
+        def clean(self):
+            cleaned_data = super().clean()
+            check_in = cleaned_data.get('Check_in')
+            check_out = cleaned_data.get('Check_out')
 
-class CoupleRoomForm(forms.ModelForm):
+            if check_in and check_out and check_in >= check_out:
+                raise ValidationError('Check-out date must be after check-in date.')
+
+            return cleaned_data
+
+
+class FamilyRoomForm(forms.ModelForm):
     class Meta:
         model = Family_Room  # Link the form to the Couple_Room model
         fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
@@ -65,8 +79,20 @@ class CoupleRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
+        def clean(self):
+            cleaned_data = super().clean()
+            check_in = cleaned_data.get('Check_in')
+            check_out = cleaned_data.get('Check_out')
 
-class CoupleRoomForm(forms.ModelForm):
+            if check_in and check_out and check_in >= check_out:
+                raise ValidationError('Check-out date must be after check-in date.')
+
+            return cleaned_data
+
+
+
+
+class GroupRoomForm(forms.ModelForm):
     class Meta:
         model = Group_Room  # Link the form to the Couple_Room model
         fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
@@ -84,8 +110,22 @@ class CoupleRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
+        def clean(self):
+            cleaned_data = super().clean()
+            check_in = cleaned_data.get('Check_in')
+            check_out = cleaned_data.get('Check_out')
 
-class CoupleRoomForm(forms.ModelForm):
+            if check_in and check_out and check_in >= check_out:
+                raise ValidationError('Check-out date must be after check-in date.')
+
+            return cleaned_data
+
+
+
+
+
+
+class SixBedRoomForm(forms.ModelForm):
     class Meta:
         model = Six_Bed_Room  # Link the form to the Couple_Room model
         fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
@@ -103,8 +143,20 @@ class CoupleRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
+        def clean(self):
+            cleaned_data = super().clean()
+            check_in = cleaned_data.get('Check_in')
+            check_out = cleaned_data.get('Check_out')
 
-class CoupleRoomForm(forms.ModelForm):
+            if check_in and check_out and check_in >= check_out:
+                raise ValidationError('Check-out date must be after check-in date.')
+
+            return cleaned_data
+
+
+
+
+class DormitoryForm(forms.ModelForm):
     class Meta:
         model = Dormitory  # Link the form to the Couple_Room model
         fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
@@ -121,3 +173,15 @@ class CoupleRoomForm(forms.ModelForm):
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
+
+        def clean(self):
+            cleaned_data = super().clean()
+            check_in = cleaned_data.get('Check_in')
+            check_out = cleaned_data.get('Check_out')
+
+            if check_in and check_out and check_in >= check_out:
+                raise ValidationError('Check-out date must be after check-in date.')
+
+            return cleaned_data
+
+

@@ -1,6 +1,7 @@
 # booking/views.py
 from django.shortcuts import render, redirect
-from .forms import AvailabilityForm, BookingForm
+from .forms import AvailabilityForm, BookingForm, CoupleRoomForm, FamilyRoomForm, GroupRoomForm, DormitoryForm, \
+    SixBedRoomForm
 
 from .models import Room
 
@@ -76,6 +77,66 @@ def payment_success(request):
 
 def not_available(request):
     return render(request,'not_available.html')
+
+def book_couple_room(request):
+    if request.method == 'POST':
+        form = CoupleRoomForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data to the Couple_Room model
+            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+    else:
+        form = CoupleRoomForm()
+
+    return render(request, 'Couple.html', {'form': form})
+
+def book_Family_room(request):
+    if request.method == 'POST':
+        form = FamilyRoomForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data to the Couple_Room model
+            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+    else:
+        form = FamilyRoomForm()
+
+    return render(request, 'Family.html', {'form': form})
+
+def book_Group_room(request):
+    if request.method == 'POST':
+        form = GroupRoomForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data to the Couple_Room model
+            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+    else:
+        form = GroupRoomForm()
+
+    return render(request, 'Group.html', {'form': form})
+
+
+
+
+def book_Six_room(request):
+    if request.method == 'POST':
+        form = SixBedRoomForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data to the Couple_Room model
+            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+    else:
+        form = SixBedRoomForm()
+
+    return render(request, 'Sixbed.html', {'form': form})
+
+def book_Dormitory(request):
+    if request.method == 'POST':
+        form = DormitoryForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the form data to the Couple_Room model
+            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+    else:
+        form = DormitoryForm()
+
+    return render(request, 'Dormitory.html', {'form': form})
+
+
 
 
 
