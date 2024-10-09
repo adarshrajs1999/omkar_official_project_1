@@ -1,0 +1,12 @@
+<!-- view_booking_details.html -->
+
+<h2>Booking Details</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <div class="form-group">
+    <button type="submit" name="ok" class="btn btn-success">OK</button>
+    <button type="submit" name="cancel" class="btn btn-danger">Cancel</button>
+  </div>
+</form>

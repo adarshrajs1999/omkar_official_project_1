@@ -108,13 +108,13 @@
                     <a class="nav-link" href="#contact" style="color: white; padding: 15px 20px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.3)'; this.style.color='orange';" onmouseout="this.style.backgroundColor=''; this.style.color='white';">CONTACT</a>
                 </li>
                 <!-- Book Your Room Button -->
-                <li class="nav-item">
 
+<li class="nav-item">
 <div class="dropdown">
 <!--        <label for="options">Choose an option:</label>-->
     <form id="bookingForm" method="POST" novalidate>
         {% csrf_token %}
-    <select id="options" onchange="scrollToDiv()">
+<select id="options" onchange="scrollToDiv()">
     <option value="" disabled selected>BOOK YOUR ROOM</option>
     <option value="couple-room">Couple Room</option>
     <option value="family-room">Family Room</option>
@@ -122,15 +122,10 @@
     <option value="six-room">Six Bed Room</option>
     <option value="dormitory">Dormitory</option>
 </select>
-
 </form>
     </div>
+        </li>
 
-
-
-
-
-                </li>
             </ul>
         </div>
     </div>
