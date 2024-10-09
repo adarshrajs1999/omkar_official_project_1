@@ -139,3 +139,17 @@ RAZORPAY_KEY_SECRET = 'YOUR_RAZORPAY_KEY_SECRET'
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
+# settings.py
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'adarshrajstest@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'gkjh remk nlqb otbq'  # Replace with your Gmail password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+
+
+
