@@ -18,7 +18,7 @@ class CoupleRoomForm(forms.ModelForm):
         # Add customizations to widgets if necessary
         widgets = {
             'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Couple Room','readonly':'readonly'}),
-            'Room_amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount'}),
+            'Room_amount': forms.Select(attrs={'class': 'form-control'},choices=[(1000, '1000'), (1800, '1800')] ),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -47,7 +47,7 @@ class FamilyRoomForm(forms.ModelForm):
         # Add customizations to widgets if necessary
         widgets = {
             'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Family Room','readonly':'readonly'}),
-            'Room_amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount'}),
+            'Room_amount': forms.Select(attrs={'class': 'form-control'},choices=[(1300, '1300'), (2000, '2000')]),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -78,7 +78,7 @@ class GroupRoomForm(forms.ModelForm):
         # Add customizations to widgets if necessary
         widgets = {
             'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Group Room','readonly':'readonly'}),
-            'Room_amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount'}),
+            'Room_amount': forms.Select(attrs={'class': 'form-control'},choices=[(2000, '2000'), (2500, '2500')]),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -111,7 +111,7 @@ class SixBedRoomForm(forms.ModelForm):
         # Add customizations to widgets if necessary
         widgets = {
             'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Six Bed Room','readonly':'readonly'}),
-            'Room_amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount'}),
+            'Room_amount': forms.Select(attrs={'class': 'form-control'},choices=[(3000, '3000'), (3000, '3000')]),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -142,7 +142,7 @@ class DormitoryForm(forms.ModelForm):
         # Add customizations to widgets if necessary
         widgets = {
             'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Dormitory','readonly':'readonly'}),
-            'Room_amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount'}),
+            'Room_amount': forms.Select(attrs={'class': 'form-control'},choices=[(3000, '3000'), (3000, '30000')]),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
