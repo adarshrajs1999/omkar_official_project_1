@@ -112,16 +112,17 @@
 
 <div class="dropdown">
 <!--        <label for="options">Choose an option:</label>-->
-    <form id="bookingForm" method="POST">
+    <form id="bookingForm" method="POST" novalidate>
         {% csrf_token %}
-    <select id="options" onchange="submitForm()">
-        <option value="" disabled selected>Book Your Room</option>
-        <option value="{% url 'book_couple_room' %}">Couple Room</option>
-        <option value="{% url 'book_Family_room' %}">Family Room</option>
-        <option value="{% url 'book_Group_room' %}">Group Room</option>
-        <option value="{% url 'book_Six_room' %}">Six Bed Room</option>
-        <option value="{% url 'book_Dormitory' %}">Dormitory</option>
-    </select>
+    <select id="options" onchange="scrollToDiv()">
+    <option value="" disabled selected>Book Your Room</option>
+    <option value="couple-room">Couple Room</option>
+    <option value="family-room">Family Room</option>
+    <option value="group-room">Group Room</option>
+    <option value="six-room">Six Bed Room</option>
+    <option value="dormitory">Dormitory</option>
+</select>
+
 </form>
     </div>
 
@@ -230,7 +231,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="room_right" style="padding: 20px;">
+                <div class="room_right" style="padding: 20px;" id="couple-room">
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Couple Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our beautifully appointed Couple bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
@@ -267,7 +268,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="room_right" style="padding: 20px;">
+                <div class="room_right" style="padding: 20px;" id="family-room">
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Family Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious Family bed room, perfect for families, friends, or groups traveling together. This thoughtfully designed room provides ample space and comfort for up to three guests, ensuring a restful stay.</p>
@@ -304,7 +305,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="room_right" style="padding: 20px;">
+                <div class="room_right" style="padding: 20px;" id="group-room">
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Group Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious Group bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
@@ -342,7 +343,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="room_right" style="padding: 20px;">
+                <div class="room_right" style="padding: 20px;" id="six-room">
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Six Bed Room</h2>
                     <p style="color: orange; font-weight: bold;">Non AC</p>
                     <p style="color: #555;">Welcome to our spacious six bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
@@ -379,7 +380,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="room_right" style="padding: 20px;">
+                <div class="room_right" style="padding: 20px;" id="dormitory">
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">Dormitory</h2>
                     <p style="color: orange; font-weight: bold;">AC</p>
                     <p style="color: #555;">Welcome to our vibrant and welcoming dormitory, designed for budget travelers, students, or groups looking for affordable yet comfortable accommodations. Our dormitory offers a social atmosphere where guests can meet, share experiences, and make lasting memories.</p>
@@ -630,16 +631,18 @@
 	<script src="{% static 'js/mail-script.js' %}"></script>
 	<script src="{% static 'js/theme.js' %}"></script>
 <script>
-function submitForm() {
+function scrollToDiv() {
     var select = document.getElementById("options");
-    var value = select.value;
-    if (value) {
-        // Change the form's action to the selected URL and submit the form
-        document.getElementById("bookingForm").action = value;
-        document.getElementById("bookingForm").submit();
+    var divId = select.value;
+    if (divId) {
+        var element = document.getElementById(divId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 </script>
+
 
 </body>
 
