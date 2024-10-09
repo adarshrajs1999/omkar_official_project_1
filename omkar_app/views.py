@@ -51,11 +51,13 @@ def book_couple_room(request):
         form = CoupleRoomForm(request.POST)
         if form.is_valid():
             form.save()  # Save the form data to the Couple_Room model
-            return redirect('booking-success')  # Redirect to a success page (you can customize this URL)
+            return redirect('booking-success')  # Redirect to the success page
     else:
         form = CoupleRoomForm()
 
     return render(request, 'Couple.html', {'form': form})
+
+
 
 def book_Family_room(request):
     if request.method == 'POST':
@@ -103,6 +105,9 @@ def book_Dormitory(request):
         form = DormitoryForm()
 
     return render(request, 'Dormitory.html', {'form': form})
+
+def booking_success(request):
+    return render(request, 'booking_success.html')
 
 
 
