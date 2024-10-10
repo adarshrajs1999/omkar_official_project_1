@@ -166,7 +166,19 @@ def booking_success(request,booking_id,room_type,):
 
     # Prepare email content
     subject = f"Booking Confirmation for {room_type.capitalize()} Room"
-    message = f"Booking ID: {booking_id}\nRoom Type: {room_type.capitalize()}\nDetails: {booking}"
+    message = (f'''
+               Details:
+               Room Type: {room_type.capitalize()}
+               Room Name:{booking.Room_name} 
+               Room_amount:{booking.Room_amount}
+               Check_in:{booking.Check_in}
+               Check_out:{booking.Check_out}
+               Name:{booking.Name}
+               Phone:{booking.Phone}
+               Email:{booking.Email}
+               Adults:{booking.Adults}
+               Child:{booking.Child}              
+               ''')
     recipient_email = 'quickstudywithanju@gmail.com'
     # Send the email
     send_mail(subject, message, 'your_email@gmail.com', [recipient_email], fail_silently=False)
