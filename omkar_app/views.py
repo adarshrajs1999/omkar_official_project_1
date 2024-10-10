@@ -187,26 +187,6 @@ def booking_success(request, booking_id, room_type):
     # Send the email
     send_mail(subject, message, 'your_email@gmail.com', [recipient_email], fail_silently=False)
 
-    # Send WhatsApp message
-    account_sid = 'AC7f9d77c1c2a1b11017e04c1b16b910b1'  # Your Twilio Account SID
-    auth_token = '98cafa783c8125d40632f2add76f0182'  # Your Twilio Auth Token
-    twilio_whatsapp_number = 'whatsapp:+14155238886'  # Correct Twilio sandbox WhatsApp number
-    recipient_whatsapp_number = 'whatsapp:+919496081054'  # Your recipient's WhatsApp number
-
-    try:
-        # Initialize the Twilio client
-        client = Client(account_sid, auth_token)
-
-        # Send the WhatsApp message
-        message_response = client.messages.create(
-            body=message,
-            from_=twilio_whatsapp_number,
-            to=recipient_whatsapp_number
-        )
-        print("WhatsApp message sent successfully:", message_response.sid)
-
-    except Exception as e:
-        print("Error sending WhatsApp message:", str(e))
 
     return render(request, 'booking_success.html')
 
