@@ -46,9 +46,6 @@ def not_available(request):
     return render(request,'not_available.html')
 
 
-def booking_success(request):
-    return render(request, 'booking_success.html')
-
 
 def book_couple_room(request):
     if request.method == 'POST':
@@ -147,24 +144,34 @@ def view_booking_details(request, booking_id, room_type):
 
     if request.method == 'POST':
         if 'ok' in request.POST:
-            # Prepare email content
-            subject = f"Booking Confirmation for {room_type.capitalize()} Room"
-            message = f"Booking ID: {booking_id}\nRoom Type: {room_type.capitalize()}\nDetails: {booking}"
-            recipient_email = 'quickstudywithanju@gmail.com'
-
-            # Send the email
-            send_mail(subject, message, 'your_email@gmail.com', [recipient_email], fail_silently=False)
-
-            return redirect('booking-success')
+            return redirect('booking-success',booking_id=booking_id,room_type=room_type)
         elif 'cancel' in request.POST:
             return redirect(redirect_url)
 
+    return render(request, 'view_booking_details.html',{'form': form, 'booking_id': booking_id, 'room_type': room_type})
 
 
-    return render(request, 'view_booking_details.html',
-                  {'form': form, 'booking_id': booking_id, 'room_type': room_type})
+def booking_success(request,booking_id,room_type,):
+    global booking
+    if room_type == 'couple':
+        booking = get_object_or_404(Couple_Room, id=booking_id)
+    elif room_type == 'family':
+        booking = get_object_or_404(Family_Room, id=booking_id)
+    elif room_type == 'group':
+        booking = get_object_or_404(Group_Room, id=booking_id)
+    elif room_type == 'sixbed':
+        booking = get_object_or_404(Six_Bed_Room, id=booking_id)
+    elif room_type == 'dormitory':
+        booking = get_object_or_404(Dormitory, id=booking_id)
 
+    # Prepare email content
+    subject = f"Booking Confirmation for {room_type.capitalize()} Room"
+    message = f"Booking ID: {booking_id}\nRoom Type: {room_type.capitalize()}\nDetails: {booking}"
+    recipient_email = 'quickstudywithanju@gmail.com'
+    # Send the email
+    send_mail(subject, message, 'your_email@gmail.com', [recipient_email], fail_silently=False)
 
+    return render(request, 'booking_success.html')
 
 
 

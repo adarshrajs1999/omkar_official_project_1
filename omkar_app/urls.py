@@ -17,6 +17,7 @@ urlpatterns = [
     path('book_Dormitory/',views.book_Dormitory,name='book_Dormitory'),
     path('booking-success/', views.booking_success, name='booking-success'),  # Success page URL
     path('booking/<int:booking_id>/<str:room_type>/details/', views.view_booking_details, name='view-booking-details'),
+    path('booking-success/<int:booking_id>/<str:room_type>/', views.booking_success, name='booking-success')
 
 
 
