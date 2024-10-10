@@ -6,6 +6,8 @@ from .forms import CoupleRoomForm, FamilyRoomForm, GroupRoomForm, DormitoryForm,
 from .models import Couple_Room, Family_Room, Group_Room, Six_Bed_Room, Dormitory
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
+from twilio.rest import Client
+
 
 
 
@@ -151,8 +153,9 @@ def view_booking_details(request, booking_id, room_type):
     return render(request, 'view_booking_details.html',{'form': form, 'booking_id': booking_id, 'room_type': room_type})
 
 
-def booking_success(request,booking_id,room_type,):
+def booking_success(request, booking_id, room_type):
     global booking
+    # Retrieve the booking object based on room type
     if room_type == 'couple':
         booking = get_object_or_404(Couple_Room, id=booking_id)
     elif room_type == 'family':
@@ -169,21 +172,44 @@ def booking_success(request,booking_id,room_type,):
     message = (f'''
                Details:
                Room Type: {room_type.capitalize()}
-               Room Name:{booking.Room_name} 
-               Room_amount:{booking.Room_amount}
-               Check_in:{booking.Check_in}
-               Check_out:{booking.Check_out}
-               Name:{booking.Name}
-               Phone:{booking.Phone}
-               Email:{booking.Email}
-               Adults:{booking.Adults}
-               Child:{booking.Child}              
+               Room Name: {booking.Room_name} 
+               Room Amount: {booking.Room_amount}
+               Check-in: {booking.Check_in}
+               Check-out: {booking.Check_out}
+               Name: {booking.Name}
+               Phone: {booking.Phone}
+               Email: {booking.Email}
+               Adults: {booking.Adults}
+               Child: {booking.Child}              
                ''')
     recipient_email = 'quickstudywithanju@gmail.com'
+
     # Send the email
     send_mail(subject, message, 'your_email@gmail.com', [recipient_email], fail_silently=False)
 
+    # Send WhatsApp message
+    account_sid = 'AC7f9d77c1c2a1b11017e04c1b16b910b1'  # Your Twilio Account SID
+    auth_token = '98cafa783c8125d40632f2add76f0182'  # Your Twilio Auth Token
+    twilio_whatsapp_number = 'whatsapp:+14155238886'  # Correct Twilio sandbox WhatsApp number
+    recipient_whatsapp_number = 'whatsapp:+919496081054'  # Your recipient's WhatsApp number
+
+    try:
+        # Initialize the Twilio client
+        client = Client(account_sid, auth_token)
+
+        # Send the WhatsApp message
+        message_response = client.messages.create(
+            body=message,
+            from_=twilio_whatsapp_number,
+            to=recipient_whatsapp_number
+        )
+        print("WhatsApp message sent successfully:", message_response.sid)
+
+    except Exception as e:
+        print("Error sending WhatsApp message:", str(e))
+
     return render(request, 'booking_success.html')
+
 
 
 
