@@ -12,8 +12,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 def home(request):
     return render(request,'home.html')
 
+
 def background(request):
     return render(request,'background.html')
+
 
 def payment_options(request):
     return render(request, 'payment_options.html')
@@ -24,6 +26,7 @@ def cash_payment(request):
 
 # booking/views.py
 
+
 def online_payment(request):
     if request.method == 'POST':
         client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
@@ -32,18 +35,81 @@ def online_payment(request):
 
     return render(request, 'razorpay_payment.html')
 
+
 def payment_success(request):
     payment_id = request.GET.get('payment_id')
     # Process the payment_id as needed (e.g., store it in the database)
     return render(request, 'payment_success.html', {'payment_id': payment_id})
 
+
 def not_available(request):
     return render(request,'not_available.html')
 
 
-
 def booking_success(request):
     return render(request, 'booking_success.html')
+
+
+def book_couple_room(request):
+    if request.method == 'POST':
+        form = CoupleRoomForm(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data
+            # Redirect to the view where users can confirm the booking details
+            return redirect('view-booking-details', booking_id=booking.id, room_type='couple')
+    else:
+        form = CoupleRoomForm()
+
+    return render(request, 'Couple.html', {'form': form})
+
+
+def book_Family_room(request):
+    if request.method == 'POST':
+        form = FamilyRoomForm(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the FamilyRoom model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='family')
+    else:
+        form = FamilyRoomForm()
+
+    return render(request, 'Family.html', {'form': form})
+
+
+def book_Group_room(request):
+    if request.method == 'POST':
+        form = GroupRoomForm(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the GroupRoom model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='group')
+    else:
+        form = GroupRoomForm()
+
+    return render(request, 'Group.html', {'form': form})
+
+
+def book_Six_room(request):
+    if request.method == 'POST':
+        form = SixBedRoomForm(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the SixBedRoom model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='sixbed')
+    else:
+        form = SixBedRoomForm()
+
+    return render(request, 'Sixbed.html', {'form': form})
+
+
+def book_Dormitory(request):
+    if request.method == 'POST':
+        form = DormitoryForm(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the Dormitory model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='dormitory')
+    else:
+        form = DormitoryForm()
+
+    return render(request, 'Dormitory.html', {'form': form})
+
 
 
 
@@ -72,8 +138,12 @@ def view_booking_details(request, booking_id, room_type):
     else:
         return redirect('not_available')  # In case of an invalid room type
 
-    # Render the form with the booking data, but in read-only mode
+    # Render the form with the booking data
     form = form_class(instance=booking)
+
+    # Make form read-only
+    for field in form.fields:
+        form.fields[field].widget.attrs['disabled'] = True
 
     if request.method == 'POST':
         if 'ok' in request.POST:
@@ -89,70 +159,11 @@ def view_booking_details(request, booking_id, room_type):
         elif 'cancel' in request.POST:
             return redirect(redirect_url)
 
-    # Make form read-only
-    for field in form.fields:
-        form.fields[field].widget.attrs['disabled'] = True
+
 
     return render(request, 'view_booking_details.html',
                   {'form': form, 'booking_id': booking_id, 'room_type': room_type})
 
-
-def book_couple_room(request):
-    if request.method == 'POST':
-        form = CoupleRoomForm(request.POST)
-        if form.is_valid():
-            booking = form.save()  # Save the form data
-            # Redirect to the view where users can confirm the booking details
-            return redirect('view-booking-details', booking_id=booking.id, room_type='couple')
-    else:
-        form = CoupleRoomForm()
-
-    return render(request, 'Couple.html', {'form': form})
-
-
-def book_Family_room(request):
-    if request.method == 'POST':
-        form = FamilyRoomForm(request.POST)
-        if form.is_valid():
-            booking = form.save()  # Save the form data to the FamilyRoom model
-            return redirect('view-booking-details', booking_id=booking.id, room_type='family')
-    else:
-        form = FamilyRoomForm()
-
-    return render(request, 'Family.html', {'form': form})
-
-def book_Group_room(request):
-    if request.method == 'POST':
-        form = GroupRoomForm(request.POST)
-        if form.is_valid():
-            booking = form.save()  # Save the form data to the GroupRoom model
-            return redirect('view-booking-details', booking_id=booking.id, room_type='group')
-    else:
-        form = GroupRoomForm()
-
-    return render(request, 'Group.html', {'form': form})
-
-def book_Six_room(request):
-    if request.method == 'POST':
-        form = SixBedRoomForm(request.POST)
-        if form.is_valid():
-            booking = form.save()  # Save the form data to the SixBedRoom model
-            return redirect('view-booking-details', booking_id=booking.id, room_type='sixbed')
-    else:
-        form = SixBedRoomForm()
-
-    return render(request, 'Sixbed.html', {'form': form})
-
-def book_Dormitory(request):
-    if request.method == 'POST':
-        form = DormitoryForm(request.POST)
-        if form.is_valid():
-            booking = form.save()  # Save the form data to the Dormitory model
-            return redirect('view-booking-details', booking_id=booking.id, room_type='dormitory')
-    else:
-        form = DormitoryForm()
-
-    return render(request, 'Dormitory.html', {'form': form})
 
 
 
