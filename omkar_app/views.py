@@ -111,7 +111,6 @@ def book_Dormitory(request):
 
 
 
-
 def view_booking_details(request, booking_id, room_type):
     # Get the booking object based on the room_type and booking_id
     if room_type == 'couple':
@@ -151,6 +150,7 @@ def view_booking_details(request, booking_id, room_type):
             return redirect(redirect_url)
 
     return render(request, 'view_booking_details.html',{'form': form, 'booking_id': booking_id, 'room_type': room_type})
+
 
 
 def booking_success(request, booking_id, room_type):
