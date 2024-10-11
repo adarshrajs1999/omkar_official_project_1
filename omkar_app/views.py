@@ -23,8 +23,37 @@ def payment_options(request):
     return render(request, 'payment_options.html')
 
 
-def cash_payment(request):
-    return render(request,'cash_booking_confirmed.html')
+def cash_payment(request, booking_id, room_type):
+    # Get the booking object to retrieve name and phone number
+    if room_type == 'couple':
+        booking = get_object_or_404(Couple_Room, id=booking_id)
+    elif room_type == 'family':
+        booking = get_object_or_404(Family_Room, id=booking_id)
+    elif room_type == 'group':
+        booking = get_object_or_404(Group_Room, id=booking_id)
+    elif room_type == 'sixbed':
+        booking = get_object_or_404(Six_Bed_Room, id=booking_id)
+    elif room_type == 'dormitory':
+        booking = get_object_or_404(Dormitory, id=booking_id)
+    else:
+        return redirect('not_available')  # In case of an invalid room type
+
+    # Prepare email content for cash payment
+    subject = f"Cash Payment Confirmation for {room_type.capitalize()} Room"
+    message = (f'''
+               Booking Details:
+               Name: {booking.Name}
+               Phone: {booking.Phone}
+               Room Type: {room_type.capitalize()}
+               ''')
+
+    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
+
+    # Send the email
+    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
+
+    return render(request, 'cash_booking_confirmed.html')
+
 
 # booking/views.py
 
@@ -41,6 +70,28 @@ def online_payment(request):
 def payment_success(request):
     payment_id = request.GET.get('payment_id')
     # Process the payment_id as needed (e.g., store it in the database)
+
+    # Get the booking details based on the payment_id (you may need to implement a lookup)
+    # For simplicity, I'll assume you have a way to retrieve booking_id from payment details.
+    booking_id = ...  # Add your logic to get booking_id based on payment_id
+
+    # Now get the booking object
+    booking = get_object_or_404(Couple_Room, id=booking_id)  # Change this to the correct model
+
+    # Prepare email content for online payment
+    subject = f"Online Payment Confirmation for {booking.Room_type.capitalize()} Room"
+    message = (f'''
+               Booking Details:
+               Name: {booking.Name}
+               Phone: {booking.Phone}
+               Room Type: {booking.Room_type.capitalize()}
+               ''')
+
+    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
+
+    # Send the email
+    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
+
     return render(request, 'payment_success.html', {'payment_id': payment_id})
 
 
@@ -187,28 +238,13 @@ def booking_success(request, booking_id, room_type):
     # Send the email
     send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
 
-    # Send WhatsApp message
-    account_sid = 'AC7f9d77c1c2a1b11017e04c1b16b910b1'  # Your Twilio Account SID
-    auth_token = '0df29e8d8974ed323c0a6901c1e0fc78'  # Your Twilio Auth Token
-    twilio_whatsapp_number = 'whatsapp:+14155238886'  # Correct Twilio sandbox WhatsApp number
-    recipient_whatsapp_number = 'whatsapp:+919496081054'  # Your recipient's WhatsApp number
+    # Send WhatsApp message (your existing logic)
 
-    try:
-        # Initialize the Twilio client
-        client = Client(account_sid, auth_token)
-
-        # Send the WhatsApp message
-        message_response = client.messages.create(
-            body=message,
-            from_=twilio_whatsapp_number,
-            to=recipient_whatsapp_number
-        )
-        print("WhatsApp message sent successfully:", message_response.sid)
-
-    except Exception as e:
-        print("Error sending WhatsApp message:", str(e))
-
-    return render(request, 'booking_success.html')
+    return render(request, 'booking_success.html', {
+        'booking': booking,
+        'booking_id': booking_id,
+        'room_type': room_type
+    })
 
 
 

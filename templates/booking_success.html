@@ -70,10 +70,12 @@
         <div class="booking-success-message">
             <h1>Thank you for your booking!</h1>
             <p>Your room has been successfully booked.</p>
-            <div class="btn-container">
-                <a href="{% url 'cash_payment' %}" class="btn btn-custom">Go to Cash Payment</a>
-                <a href="{% url 'online_payment' %}" class="btn btn-custom">Go to Online Payment</a>
-            </div>
+<div class="btn-container">
+    <a href="{% url 'cash_payment' booking_id=booking.id room_type=room_type %}" class="btn btn-custom">Go to Cash Payment</a>
+    <a href="{% url 'online_payment' %}" class="btn btn-custom">Go to Online Payment</a>
+</div>
+
+
         </div>
     </div>
 
