@@ -233,7 +233,7 @@ def booking_success(request, booking_id, room_type):
                Adults: {booking.Adults}
                Child: {booking.Child}              
                ''')
-    recipient_email = 'quickstudywithanju@gmail.com'
+    recipient_email = 'adarshrajscasual@gmail.com'
 
     # Send the email
     send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
