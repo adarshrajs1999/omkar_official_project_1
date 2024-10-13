@@ -207,7 +207,7 @@ def cash_payment(request, booking_id, room_type):
                Room Type: {room_type.capitalize()}
                ''')
 
-    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
+    recipient_email = 'adarshrajscasual@gmail.com'  # Your recipient email
 
     # Send the email
     send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
