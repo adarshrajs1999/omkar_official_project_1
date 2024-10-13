@@ -16,8 +16,8 @@ class Couple_Room(models.Model):
     Name=models.CharField(max_length=100)
     Phone=models.IntegerField()
     Email=models.EmailField()
-    Adults=models.IntegerField()
-    Child=models.IntegerField()
+    Adults = models.PositiveIntegerField()
+    Child = models.PositiveIntegerField()
 
 class Family_Room(models.Model):
     ROOM_AMOUNT_CHOICES = [
@@ -32,8 +32,8 @@ class Family_Room(models.Model):
     Name = models.CharField(max_length=100)
     Phone = models.IntegerField()
     Email = models.EmailField()
-    Adults = models.IntegerField()
-    Child = models.IntegerField()
+    Adults = models.PositiveIntegerField()
+    Child = models.PositiveIntegerField()
 
 class Group_Room(models.Model):
     ROOM_AMOUNT_CHOICES = [
@@ -48,8 +48,8 @@ class Group_Room(models.Model):
     Name=models.CharField(max_length=100)
     Phone=models.IntegerField()
     Email=models.EmailField()
-    Adults=models.IntegerField()
-    Child=models.IntegerField()
+    Adults = models.PositiveIntegerField()
+    Child = models.PositiveIntegerField()
 
 class Six_Bed_Room(models.Model):
     ROOM_AMOUNT_CHOICES = [
@@ -64,8 +64,8 @@ class Six_Bed_Room(models.Model):
     Name=models.CharField(max_length=100)
     Phone=models.IntegerField()
     Email=models.EmailField()
-    Adults=models.IntegerField()
-    Child=models.IntegerField()
+    Adults = models.PositiveIntegerField()
+    Child = models.PositiveIntegerField()
 
 class Dormitory(models.Model):
     ROOM_AMOUNT_CHOICES = [
@@ -80,5 +80,5 @@ class Dormitory(models.Model):
     Name=models.CharField(max_length=100)
     Phone=models.IntegerField()
     Email=models.EmailField()
-    Adults=models.IntegerField()
-    Child=models.IntegerField()
+    Adults = models.PositiveIntegerField()
+    Child = models.PositiveIntegerField()
