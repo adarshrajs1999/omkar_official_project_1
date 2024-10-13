@@ -7,97 +7,14 @@ from .models import Couple_Room, Family_Room, Group_Room, Six_Bed_Room, Dormitor
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
 from twilio.rest import Client
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+razorpay_client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
 
 
 
 def home(request):
     return render(request,'home.html')
-
-
-def background(request):
-    return render(request,'background.html')
-
-
-def payment_options(request):
-    return render(request, 'payment_options.html')
-
-
-def cash_payment(request, booking_id, room_type):
-    # Get the booking object to retrieve name and phone number
-    if room_type == 'couple':
-        booking = get_object_or_404(Couple_Room, id=booking_id)
-    elif room_type == 'family':
-        booking = get_object_or_404(Family_Room, id=booking_id)
-    elif room_type == 'group':
-        booking = get_object_or_404(Group_Room, id=booking_id)
-    elif room_type == 'sixbed':
-        booking = get_object_or_404(Six_Bed_Room, id=booking_id)
-    elif room_type == 'dormitory':
-        booking = get_object_or_404(Dormitory, id=booking_id)
-    else:
-        return redirect('not_available')  # In case of an invalid room type
-
-    # Prepare email content for cash payment
-    subject = f"Cash Payment Confirmation for {room_type.capitalize()} Room"
-    message = (f'''
-               Booking Details:
-               Name: {booking.Name}
-               Phone: {booking.Phone}
-               Room Type: {room_type.capitalize()}
-               ''')
-
-    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
-
-    # Send the email
-    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
-
-    return render(request, 'cash_booking_confirmed.html')
-
-
-# booking/views.py
-
-
-def online_payment(request):
-    if request.method == 'POST':
-        client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
-        payment = client.order.create({'amount': 1000, 'currency': 'INR', 'payment_capture': '1'})
-        return render(request, 'razorpay_payment.html', {'payment': payment})
-
-    return render(request, 'razorpay_payment.html')
-
-
-def payment_success(request):
-    payment_id = request.GET.get('payment_id')
-    # Process the payment_id as needed (e.g., store it in the database)
-
-    # Get the booking details based on the payment_id (you may need to implement a lookup)
-    # For simplicity, I'll assume you have a way to retrieve booking_id from payment details.
-    booking_id = ...  # Add your logic to get booking_id based on payment_id
-
-    # Now get the booking object
-    booking = get_object_or_404(Couple_Room, id=booking_id)  # Change this to the correct model
-
-    # Prepare email content for online payment
-    subject = f"Online Payment Confirmation for {booking.Room_type.capitalize()} Room"
-    message = (f'''
-               Booking Details:
-               Name: {booking.Name}
-               Phone: {booking.Phone}
-               Room Type: {booking.Room_type.capitalize()}
-               ''')
-
-    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
-
-    # Send the email
-    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
-
-    return render(request, 'payment_success.html', {'payment_id': payment_id})
-
-
-def not_available(request):
-    return render(request,'not_available.html')
-
 
 
 def book_couple_room(request):
@@ -266,8 +183,105 @@ def booking_success(request, booking_id, room_type):
         'room_type': room_type
     })
 
+def cash_payment(request, booking_id, room_type):
+    # Get the booking object to retrieve name and phone number
+    if room_type == 'couple':
+        booking = get_object_or_404(Couple_Room, id=booking_id)
+    elif room_type == 'family':
+        booking = get_object_or_404(Family_Room, id=booking_id)
+    elif room_type == 'group':
+        booking = get_object_or_404(Group_Room, id=booking_id)
+    elif room_type == 'sixbed':
+        booking = get_object_or_404(Six_Bed_Room, id=booking_id)
+    elif room_type == 'dormitory':
+        booking = get_object_or_404(Dormitory, id=booking_id)
+    else:
+        return redirect('not_available')  # In case of an invalid room type
+
+    # Prepare email content for cash payment
+    subject = f"Cash Payment Confirmation for {room_type.capitalize()} Room"
+    message = (f'''
+               Booking Details:
+               Name: {booking.Name}
+               Phone: {booking.Phone}
+               Room Type: {room_type.capitalize()}
+               ''')
+
+    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
+
+    # Send the email
+    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
+
+    return render(request, 'cash_booking_confirmed.html')
 
 
+def create_razorpay_order(request, booking_id, room_type):
+    # Fetch room details (use the appropriate model depending on room_type)
+    room = None
+    if room_type == 'couple':
+        room = Couple_Room.objects.get(id=booking_id)
+    elif room_type == 'family':
+        room = Family_Room.objects.get(id=booking_id)
+    elif room_type == 'group':
+        room = Group_Room.objects.get(id=booking_id)
+    elif room_type == 'six_bed':
+        room = Six_Bed_Room.objects.get(id=booking_id)
+    elif room_type == 'dormitory':
+        room = Dormitory.objects.get(id=booking_id)
+
+    if room:
+        order_amount = int(room.Room_amount * 100)  # Amount in paise
+        order_currency = 'INR'
+        order_receipt = f'order_rcptid_{booking_id}'
+
+        # Create a Razorpay order
+        razorpay_order = razorpay_client.order.create({
+            'amount': order_amount,
+            'currency': order_currency,
+            'receipt': order_receipt,
+            'payment_capture': '1'
+        })
+
+        context = {
+            'razorpay_order_id': razorpay_order['id'],
+            'razorpay_merchant_key': settings.RAZORPAY_KEY_ID,
+            'order_amount': order_amount,
+            'currency': order_currency,
+            'room': room
+        }
+
+        return render(request, 'razorpay_payment.html', context)
+    else:
+        return redirect('booking_failure')
+
+@csrf_exempt
+def razorpay_payment_callback(request):
+    if request.method == "POST":
+        payment_id = request.POST.get('razorpay_payment_id', '')
+        order_id = request.POST.get('razorpay_order_id', '')
+        signature = request.POST.get('razorpay_signature', '')
+
+        # Verify the payment signature
+        params_dict = {
+            'razorpay_order_id': order_id,
+            'razorpay_payment_id': payment_id,
+            'razorpay_signature': signature
+        }
+
+        try:
+            razorpay_client.utility.verify_payment_signature(params_dict)
+            # Payment successful
+            # Save the payment status and related booking info
+            return redirect('payment_success')
+        except razorpay.errors.SignatureVerificationError:
+            # Payment failed due to signature mismatch
+            return redirect('payment_failure')
+
+def payment_success(request):
+    return render(request, 'payment_success.html')
+
+def payment_failure(request):
+    return render(request, 'payment_failure.html')
 
 
 

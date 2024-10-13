@@ -73,7 +73,7 @@
             <p>Your room has been successfully booked.</p>
 <div class="btn-container">
     <a href="{% url 'cash_payment' booking_id=booking.id room_type=room_type %}" class="btn btn-custom">Go to Cash Payment</a>
-    <a href="{% url 'online_payment' %}" class="btn btn-custom">Go to Online Payment</a>
+    <a href="{% url 'create_razorpay_order' booking_id=booking.id room_type=room_type %}" class="btn btn-custom">Go to Online Payment</a>
 </div>
 
 

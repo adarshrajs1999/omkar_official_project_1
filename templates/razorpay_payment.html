@@ -1,47 +1,36 @@
-<!-- templates/booking/razorpay_payment.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment via Razorpay</title>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
 </head>
 <body>
-    <h2>Online Payment via Razorpay</h2>
-    <form id="payment-form">
-        <button id="pay-button">Pay Now</button>
+
+
+<div class="container">
+    <h2>Complete Your Payment</h2>
+    <p>Room: {{ room.Room_name }}</p>
+    <p>Amount: ₹{{ order_amount / 100 }}</p>
+    <form id="razorpay-form">
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="{{ razorpay_merchant_key }}"
+            data-amount="{{ order_amount }}"
+            data-currency="{{ currency }}"
+            data-order_id="{{ razorpay_order_id }}"
+            data-buttontext="Pay Now"
+            data-name="Room Booking"
+            data-description="Payment for room booking"
+            data-prefill.name="{{ room.Name }}"
+            data-prefill.email="{{ room.Email }}"
+            data-theme.color="#528FF0"
+        ></script>
+        <input type="hidden" value="Hidden Element" name="hidden">
     </form>
+</div>
 
-    <script>
-        document.getElementById('pay-button').onclick = function(e) {
-            e.preventDefault();
 
-            var options = {
-                "key": "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
-                "amount": "1000", // Amount is in currency subunits (1 INR = 100 paise)
-                "currency": "INR",
-                "name": "Your Hotel Name",
-                "description": "Booking Description",
-                "image": "https://your-logo-url.com",
-                "handler": function (response){
-                    alert(response.razorpay_payment_id);
-                    // Redirect to success page or handle successful payment here
-                    window.location.href = "{% url 'payment_success' %}?payment_id=" + response.razorpay_payment_id;
-                },
-                "prefill": {
-                    "name": "Customer Name",
-                    "email": "customer@example.com",
-                    "contact": "9999999999"
-                },
-                "theme": {
-                    "color": "#F37254"
-                }
-            };
 
-            var rzp1 = new Razorpay(options);
-            rzp1.open();
-        }
-    </script>
 </body>
 </html>
