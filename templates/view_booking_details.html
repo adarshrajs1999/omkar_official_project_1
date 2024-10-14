@@ -19,7 +19,7 @@
             background-size: cover;
         }
 
-        .booking-details-form {
+        .booking-details {
             max-width: 600px;
             margin: 100px auto;
             padding: 30px;
@@ -28,28 +28,33 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .booking-details-form h2 {
+        .booking-details h2 {
             text-align: center;
             margin-bottom: 30px;
             color: #007bff;
             font-weight: bold;
         }
 
-        .booking-details-form .form-label {
+        .booking-details table {
+            width: 100%;
+        }
+
+        .booking-details td {
+            padding: 10px;
             font-weight: bold;
+        }
+
+        .booking-details td:nth-child(1) {
+            width: 40%;
             color: #333;
         }
 
-        .booking-details-form .form-control {
-            border-radius: 0.5rem;
-            width: 100%; /* Ensure all input fields are of the same width */
+        .booking-details td:nth-child(2) {
+            width: 60%;
+            color: #000; /* Changed to black */
         }
 
-        .booking-details-form .row {
-            margin-bottom: 1.5rem;
-        }
-
-        .booking-details-form .btn-custom {
+        .btn-custom {
             background-color: #007bff;
             color: white;
             border: none;
@@ -59,110 +64,76 @@
             width: 48%;
         }
 
-        .booking-details-form .btn-success {
+        .btn-success {
             background-color: #28a745;
         }
 
-        .booking-details-form .btn-danger {
+        .btn-danger {
             background-color: #dc3545;
         }
 
-        .booking-details-form .btn:hover {
+        .btn:hover {
             opacity: 0.9;
-        }
-
-        .form-group {
-            display: flex;
-            justify-content: space-between;
         }
 
         .btn-group {
             text-align: center;
         }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="booking-details-form">
+        <div class="booking-details">
             <h2>Booking Details</h2>
-            <form method="POST">
-                {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td>Room Name:</td>
+                    <td>{{ form.Room_name.value }}</td>
+                </tr>
+                <tr>
+                    <td>Room Amount:</td>
+                    <td>{{ form.Room_amount.value }}</td>
+                </tr>
+                <tr>
+                    <td>Check-in:</td>
+                    <td>{{ form.Check_in.value }}</td>
+                </tr>
+                <tr>
+                    <td>Check-out:</td>
+                    <td>{{ form.Check_out.value }}</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ form.Name.value }}</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>{{ form.Phone.value }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ form.Email.value }}</td>
+                </tr>
+                <tr>
+                    <td>Adults:</td>
+                    <td>{{ form.Adults.value }}</td>
+                </tr>
+                <tr>
+                    <td>Child:</td>
+                    <td>{{ form.Child.value }}</td>
+                </tr>
+            </table>
 
-                <!-- Render form fields with labels and inputs in rows -->
-                <div class="form-container">
-                    <div class="row">
-                        <label for="Room_name" class="col-md-4 form-label">Room Name</label>
-                        <div class="col-md-8">
-                            {{ form.Room_name }}
-                        </div>
-                    </div>
-
-                    <div class="form-container">
-                    <div class="row">
-                        <label for="Room_amount" class="col-md-4 form-label">Room Amount</label>
-                        <div class="col-md-8">
-                            {{ form.Room_amount }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="Check_in" class="col-md-4 form-label">Check-in</label>
-                        <div class="col-md-8">
-                            {{ form.Check_in }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="Check_out" class="col-md-4 form-label">Check-out</label>
-                        <div class="col-md-8">
-                            {{ form.Check_out }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="Name" class="col-md-4 form-label">Name</label>
-                        <div class="col-md-8">
-                            {{ form.Name }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="Phone" class="col-md-4 form-label">Phone</label>
-                        <div class="col-md-8">
-                            {{ form.Phone }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="Email" class="col-md-4 form-label">Email</label>
-                        <div class="col-md-8">
-                            {{ form.Email }}
-                        </div>
-                    </div>
-
-                  <div class="row">
-                        <label for="Adults" class="col-md-4 form-label">Adults</label>
-                        <div class="col-md-8">
-                            {{ form.Adults }}
-                        </div>
-                    </div>
-
-                         <div class="row">
-                        <label for="Child" class="col-md-4 form-label">Child</label>
-                        <div class="col-md-8">
-                            {{ form.Child }}
-                        </div>
-                    </div>
-
-                    <!-- Buttons aligned side by side -->
-                    <div class="btn-group mt-4">
-                        <button type="submit" name="ok" class="btn btn-success btn-custom">OK</button>
-                        <button type="submit" name="cancel" class="btn btn-danger btn-custom">Cancel</button>
-                    </div>
-                </div>
-
-            </form>
+            <!-- Buttons aligned side by side -->
+            <div class="btn-group mt-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="ok" class="btn btn-success btn-custom">OK</button>
+                    <button type="submit" name="cancel" class="btn btn-danger btn-custom">Cancel</button>
+                </form>
+            </div>
         </div>
     </div>
 
