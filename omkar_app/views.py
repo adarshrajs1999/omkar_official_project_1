@@ -215,44 +215,47 @@ def cash_payment(request, booking_id, room_type):
     return render(request, 'cash_booking_confirmed.html')
 
 
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+
+
 def create_razorpay_order(request, booking_id, room_type):
-    # Fetch room details (use the appropriate model depending on room_type)
-    room = None
-    if room_type == 'couple':
-        room = Couple_Room.objects.get(id=booking_id)
-    elif room_type == 'family':
-        room = Family_Room.objects.get(id=booking_id)
-    elif room_type == 'group':
-        room = Group_Room.objects.get(id=booking_id)
-    elif room_type == 'six_bed':
-        room = Six_Bed_Room.objects.get(id=booking_id)
-    elif room_type == 'dormitory':
-        room = Dormitory.objects.get(id=booking_id)
+    room = None  # Initialize the variable to avoid UnboundLocalError
+
+    try:
+        # Fetch the appropriate room details based on the room_type
+        if room_type == 'couple':
+            room = Couple_Room.objects.get(id=booking_id)
+        elif room_type == 'family':
+            room = Family_Room.objects.get(id=booking_id)
+        elif room_type == 'group':
+            room = Group_Room.objects.get(id=booking_id)
+        elif room_type == 'sixbed':
+            room = Six_Bed_Room.objects.get(id=booking_id)
+        elif room_type == 'dormitory':
+            room = Dormitory.objects.get(id=booking_id)
+    except (Couple_Room.DoesNotExist, Family_Room.DoesNotExist, Group_Room.DoesNotExist, Six_Bed_Room.DoesNotExist,
+            Dormitory.DoesNotExist):
+        return redirect('booking_failure')
 
     if room:
-        order_amount = int(room.Room_amount * 100)  # Amount in paise
-        order_currency = 'INR'
-        order_receipt = f'order_rcptid_{booking_id}'
-
-        # Create a Razorpay order
+        # Proceed with Razorpay order creation
+        amount = int(room.Room_amount) * 100  # Convert amount to paise
         razorpay_order = razorpay_client.order.create({
-            'amount': order_amount,
-            'currency': order_currency,
-            'receipt': order_receipt,
+            'amount': amount,
+            'currency': 'INR',
             'payment_capture': '1'
         })
-
         context = {
+            'room': room,
             'razorpay_order_id': razorpay_order['id'],
-            'razorpay_merchant_key': settings.RAZORPAY_KEY_ID,
-            'order_amount': order_amount,
-            'currency': order_currency,
-            'room': room
+            'razorpay_key': 'your_razorpay_key',  # Replace with your actual Razorpay key
+            'amount': amount,
         }
+        return render(request, 'payment_template.html', context)
 
-        return render(request, 'razorpay_payment.html', context)
-    else:
-        return redirect('booking_failure')
+    return redirect('booking_failure')
+
 
 @csrf_exempt
 def razorpay_payment_callback(request):
