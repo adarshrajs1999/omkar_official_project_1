@@ -150,7 +150,7 @@ def booking_success(request, booking_id, room_type):
                Adults: {booking.Adults}
                Child: {booking.Child}              
                ''')
-    recipient_email = 'adarshrajscasual@gmail.com'
+    recipient_email = 'quickstudywithanju@gmail.com'
 
     # Send the email
     send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
@@ -207,7 +207,7 @@ def cash_payment(request, booking_id, room_type):
                Room Type: {room_type.capitalize()}
                ''')
 
-    recipient_email = 'adarshrajscasual@gmail.com'  # Your recipient email
+    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
 
     # Send the email
     send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
