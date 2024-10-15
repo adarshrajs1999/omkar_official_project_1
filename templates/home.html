@@ -65,6 +65,11 @@
             margin-top: 10px;
         }
     }
+        .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 </style>
 
 </head>
@@ -386,11 +391,11 @@
         </div>
 
         <!-- Services Section -->
-<div class="container-fluid text-center my-5">
+<div class="container-fluid text-center my-5 py-5" style="background-color: #f7f7f7; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
     <div class="row">
         <div class="col">
-            <!-- Changed to a more detailed and visually attractive tool icon -->
-            <i class="fas fa-tools" style="font-size: 3em; color: brown;"></i>
+            <!-- Enhanced tool icon with better sizing and color contrast -->
+            <i class="fas fa-tools" style="font-size: 4em; color: brown;"></i>
             <h2 class="display-4 mt-3" style="color: #333;">Our Services</h2>
         </div>
     </div>
@@ -398,26 +403,27 @@
 
 <div class="container my-5">
     <div class="row text-center">
+        <!-- Card 1: Room Cleaning -->
         <div class="col-md-6 mb-4">
-            <div class="card shadow-sm p-4 rounded">
-                <!-- Changed to a more detailed cleaning icon -->
-                <i class="fas fa-spray-can-sparkles" style="font-size: 3em; color: brown;"></i>
-                <h3 class="mt-3" style="color: #333;">Room Cleaning</h3>
-                <p style="color: #555;">Experience immaculate cleanliness, tidiness, and a fresh comfortable environment.</p>
+            <div class="card service-card h-100 shadow-sm p-4 rounded-3 border-0" style="transition: transform 0.3s;">
+                <i class="fas fa-spray-can-sparkles" style="font-size: 3.5em; color: brown;"></i>
+                <h3 class="mt-4" style="color: #333;">Room Cleaning</h3>
+                <p class="text-muted">Experience immaculate cleanliness, tidiness, and a fresh, comfortable environment.</p>
             </div>
         </div>
 
+        <!-- Card 2: Pickup & Drop -->
         <div class="col-md-6 mb-4">
-            <div class="card shadow-sm p-4 rounded">
-                <!-- Changed to a more modern location/transportation icon -->
-                <i class="fas fa-shuttle-van" style="font-size: 3em; color: brown;"></i>
-                <h3 class="mt-3" style="color: #333;">Pickup & Drop</h3>
-                <p style="color: #555;">Ensures seamless journey to and from Omkaar Tourist Home, making your travel hassle-free.</p>
+            <div class="card service-card h-100 shadow-sm p-4 rounded-3 border-0" style="transition: transform 0.3s;">
+                <i class="fas fa-shuttle-van" style="font-size: 3.5em; color: brown;"></i>
+                <h3 class="mt-4" style="color: #333;">Pickup & Drop</h3>
+                <p class="text-muted">Enjoy a seamless journey to and from Omkaar Tourist Home, making your travel hassle-free.</p>
             </div>
         </div>
     </div>
 </div>
 
+<!--sevices ends-->
 
 
     </div>
