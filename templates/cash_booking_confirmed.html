@@ -19,6 +19,13 @@
             background: url('{% static 'img/omkar_image-2.jpg' %}') no-repeat center center fixed;
             background-size: cover;
         }
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 
         .booking-success-message {
             max-width: 600px;
@@ -32,7 +39,7 @@
         .booking-success-message h1 {
             text-align: center;
             margin-bottom: 30px;
-            color: #007bff;
+            color: #000000;
             font-weight: bold;
         }
 
@@ -54,6 +61,8 @@
             margin-top: 20px; /* Space above the button */
             text-align:center;
         }
+        .booking-success-message .btn-green {
+            background-color: #28a745;
 
         .booking-success-message .btn-custom:hover {
             opacity: 0.9;
@@ -73,7 +82,7 @@
             <h1>Booking Confirmed</h1>
             <p>Your booking has been successfully confirmed.</p>
             <div class="btn-container">
-                <a href="{% url 'home' %}" class="btn btn-custom">Go to Home Page</a>
+                <a href="{% url 'home' %}" class="btn btn-custom btn-green">Go to Home Page</a>
             </div>
         </div>
     </div>
