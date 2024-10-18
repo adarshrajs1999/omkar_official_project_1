@@ -13,12 +13,12 @@ class ValidationError(Exception):
 class CoupleRoomForm(forms.ModelForm):
     class Meta:
         model = Couple_Room  # Link the form to the Couple_Room model
-        fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
+        fields = '__all__'  # Use all fields in the model, or specify certain fields like ['Room_name', 'Room_amount', ...]
 
         # Add customizations to widgets if necessary
         widgets = {
-            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Family Room','readonly':'readonly'}),
-            'Room_amount': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Enter Room Amount', 'value': '1000', 'readonly': 'readonly'}),
+            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name', 'value': 'Couple Room', 'readonly': 'readonly'}),
+            'Room_amount': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Amount', 'value': '1000', 'readonly': 'readonly'}),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -28,15 +28,17 @@ class CoupleRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            check_in = cleaned_data.get('Check_in')
-            check_out = cleaned_data.get('Check_out')
+    # The clean method must be outside the Meta class
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in = cleaned_data.get('Check_in')
+        check_out = cleaned_data.get('Check_out')
 
-            if check_in and check_out and check_in >= check_out:
-                raise ValidationError('Check-out date must be after check-in date.')
+        if check_in and check_out and check_in >= check_out:
+            raise ValidationError('Check-out date must be after check-in date.')
 
-            return cleaned_data
+        return cleaned_data
+
 
 
 class CoupleRoomFormAC(forms.ModelForm):
@@ -72,13 +74,13 @@ class CoupleRoomFormAC(forms.ModelForm):
 
 class FamilyRoomForm(forms.ModelForm):
     class Meta:
-        model = Family_Room  # Link the form to the Couple_Room model
-        fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
+        model = Family_Room  # Link the form to the Family_Room model
+        fields = '__all__'  # Use all fields in the model, or specify specific fields
 
-        # Add customizations to widgets if necessary
+        # Custom widgets for the form fields
         widgets = {
-            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Family Room','readonly':'readonly'}),
-            'Room_amount': forms.TextInput(attrs={'class': 'form-control','placeholder':'Enter Room Amount','value':'1300','readonly':'readonly'}),
+            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'value': 'Family Room', 'readonly': 'readonly'}),
+            'Room_amount': forms.TextInput(attrs={'class': 'form-control', 'value': '1300', 'readonly': 'readonly'}),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -88,15 +90,16 @@ class FamilyRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            check_in = cleaned_data.get('Check_in')
-            check_out = cleaned_data.get('Check_out')
+    # The clean method must be outside the Meta class
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in = cleaned_data.get('Check_in')
+        check_out = cleaned_data.get('Check_out')
 
-            if check_in and check_out and check_in >= check_out:
-                raise ValidationError('Check-out date must be after check-in date.')
+        if check_in and check_out and check_in >= check_out:
+            raise ValidationError('Check-out date must be after check-in date.')
 
-            return cleaned_data
+        return cleaned_data
 
 class FamilyRoomFormAC(forms.ModelForm):
     class Meta:
@@ -130,13 +133,13 @@ class FamilyRoomFormAC(forms.ModelForm):
 
 class GroupRoomForm(forms.ModelForm):
     class Meta:
-        model = Group_Room  # Link the form to the Couple_Room model
-        fields = '__all__'  # Use all fields in the model, or you can specify certain fields like ['Room_name', 'Room_amount', ...]
+        model = Group_Room  # Link the form to the Group_Room model
+        fields = '__all__'  # Use all fields in the model
 
-        # Add customizations to widgets if necessary
+        # Custom widgets for the form fields
         widgets = {
-            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Room Name','value':'Group Room','readonly':'readonly'}),
-            'Room_amount': forms.TextInput(attrs={'class': 'form-control','placeholder':'Enter Room Name','value':'2000','readonly':'readonly'}),
+            'Room_name': forms.TextInput(attrs={'class': 'form-control', 'value': 'Group Room', 'readonly': 'readonly'}),
+            'Room_amount': forms.TextInput(attrs={'class': 'form-control', 'value': '2000', 'readonly': 'readonly'}),
             'Check_in': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Check_out': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
@@ -146,15 +149,17 @@ class GroupRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            check_in = cleaned_data.get('Check_in')
-            check_out = cleaned_data.get('Check_out')
+    # Move the clean method outside the Meta class
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in = cleaned_data.get('Check_in')
+        check_out = cleaned_data.get('Check_out')
 
-            if check_in and check_out and check_in >= check_out:
-                raise ValidationError('Check-out date must be after check-in date.')
+        # Check if check-in and check-out dates are valid
+        if check_in and check_out and check_in >= check_out:
+            raise ValidationError('Check-out date must be after check-in date.')
 
-            return cleaned_data
+        return cleaned_data
 
 class GroupRoomFormAC(forms.ModelForm):
     class Meta:
@@ -206,15 +211,15 @@ class SixBedRoomForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            check_in = cleaned_data.get('Check_in')
-            check_out = cleaned_data.get('Check_out')
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in = cleaned_data.get('Check_in')
+        check_out = cleaned_data.get('Check_out')
 
-            if check_in and check_out and check_in >= check_out:
-                raise ValidationError('Check-out date must be after check-in date.')
+        if check_in and check_out and check_in >= check_out:
+            raise ValidationError('Check-out date must be after check-in date.')
 
-            return cleaned_data
+        return cleaned_data
 
 
 
@@ -237,14 +242,14 @@ class DormitoryForm(forms.ModelForm):
             'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            check_in = cleaned_data.get('Check_in')
-            check_out = cleaned_data.get('Check_out')
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in = cleaned_data.get('Check_in')
+        check_out = cleaned_data.get('Check_out')
 
-            if check_in and check_out and check_in >= check_out:
-                raise ValidationError('Check-out date must be after check-in date.')
+        if check_in and check_out and check_in >= check_out:
+            raise ValidationError('Check-out date must be after check-in date.')
 
-            return cleaned_data
+        return cleaned_data
 
 
