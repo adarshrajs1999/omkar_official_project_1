@@ -2,7 +2,8 @@
 from django.shortcuts import render, redirect,get_object_or_404
 from django.conf import settings
 import razorpay
-from .forms import CoupleRoomForm, FamilyRoomForm, GroupRoomForm, DormitoryForm, SixBedRoomForm
+from .forms import CoupleRoomForm, FamilyRoomForm, GroupRoomForm, DormitoryForm, SixBedRoomForm, CoupleRoomFormAC, \
+    FamilyRoomFormAC, GroupRoomFormAC
 from .models import Couple_Room, Family_Room, Group_Room, Six_Bed_Room, Dormitory
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
@@ -21,14 +22,13 @@ def book_couple_room(request):
     if request.method == 'POST':
         form = CoupleRoomForm(request.POST)
         if form.is_valid():
-            booking = form.save()  # Save the form data
-            # Redirect to the view where users can confirm the booking details
+            booking = form.save()  # Save the form data without committing to the database yet
+
             return redirect('view-booking-details', booking_id=booking.id, room_type='couple')
     else:
         form = CoupleRoomForm()
 
     return render(request, 'Couple.html', {'form': form})
-
 
 def book_Family_room(request):
     if request.method == 'POST':
@@ -76,6 +76,40 @@ def book_Dormitory(request):
         form = DormitoryForm()
 
     return render(request, 'Dormitory.html', {'form': form})
+
+def CoupleAC_Book(request):
+    if request.method == 'POST':
+        form = CoupleRoomFormAC(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the Couple_Room model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='couple')
+    else:
+        form = CoupleRoomFormAC()
+
+    return render(request, 'CoupleAC.html', {'form': form})
+
+def FamilyAC_Book(request):
+    if request.method == 'POST':
+        form = FamilyRoomFormAC(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the Couple_Room model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='family')
+    else:
+        form = FamilyRoomFormAC()
+
+    return render(request, 'FamilyAC.html', {'form': form})
+
+def GroupAC_Book(request):
+    if request.method == 'POST':
+        form = GroupRoomFormAC(request.POST)
+        if form.is_valid():
+            booking = form.save()  # Save the form data to the Couple_Room model
+            return redirect('view-booking-details', booking_id=booking.id, room_type='group')
+    else:
+        form = GroupRoomFormAC()
+
+    return render(request, 'GroupAC.html', {'form': form})
+
 
 
 
