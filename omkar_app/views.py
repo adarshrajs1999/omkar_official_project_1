@@ -195,6 +195,7 @@ def booking_success(request, booking_id, room_type):
         'room_type': room_type
     })
 
+
 def cash_payment(request, booking_id, room_type):
     # Get the booking object to retrieve name and phone number
     if room_type == 'couple':
