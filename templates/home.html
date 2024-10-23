@@ -114,8 +114,8 @@
                 <!-- Book Your Room Button -->
 
 <li class="nav-item">
+<!--    drop down-->
 <div class="dropdown">
-<!--        <label for="options">Choose an option:</label>-->
     <form id="bookingForm" method="POST" novalidate>
         {% csrf_token %}
 <select id="options" onchange="scrollToDiv()">
@@ -128,6 +128,7 @@
 </select>
 </form>
     </div>
+
         </li>
 
             </ul>
