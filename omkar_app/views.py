@@ -251,7 +251,7 @@ def create_razorpay_order(request, booking_id, room_type):
 
     if room:
         # Proceed with Razorpay order creation
-        amount = int(room.Room_amount) * 100  # Convert amount to paise
+        amount = int(room.Room_amount)   # Convert amount to paise
         razorpay_order = razorpay_client.order.create({
             'amount': amount,
             'currency': 'INR',
