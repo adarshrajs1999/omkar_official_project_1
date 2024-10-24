@@ -15,8 +15,8 @@ urlpatterns = [
     path('cash-payment/<int:booking_id>/<str:room_type>/', views.cash_payment, name='cash_payment'),
     path('create-razorpay-order/<int:booking_id>/<str:room_type>/', views.create_razorpay_order,name='create_razorpay_order'),
     path('razorpay-callback/', views.razorpay_payment_callback, name='razorpay_payment_callback'),
-    path('payment_success',views.payment_success,name='payment_success'),
-    path('payment_failure',views.payment_failure,name='payment_failure'),
+    path('payment_success/',views.payment_success,name='payment_success'),
+    path('payment_failure/',views.payment_failure,name='payment_failure'),
 
 
     path('CoupleAC_Book/',views.CoupleAC_Book,name='CoupleAC_Book'),
