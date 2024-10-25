@@ -30,6 +30,8 @@ def book_couple_room(request):
 
     return render(request, 'Couple.html', {'form': form})
 
+
+
 def book_Family_room(request):
     if request.method == 'POST':
         form = FamilyRoomForm(request.POST)
@@ -184,10 +186,10 @@ def booking_success(request, booking_id, room_type):
                Adults: {booking.Adults}
                Child: {booking.Child}              
                ''')
-    recipient_email = 'quickstudywithanju@gmail.com'
+    recipient_email = 'omkaartouristhome@gmail.com'
 
     # Send the email
-    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
+    send_mail(subject, message, 'omkaartouristhome@gmail.com', [recipient_email], fail_silently=False)
 
     return render(request, 'booking_success.html', {
         'booking': booking,
@@ -220,10 +222,10 @@ def cash_payment(request, booking_id, room_type):
                Room Type: {room_type.capitalize()}
                ''')
 
-    recipient_email = 'quickstudywithanju@gmail.com'  # Your recipient email
+    recipient_email = 'omkaartouristhome@gmail.com'  # Your recipient email
 
     # Send the email
-    send_mail(subject, message, 'adarshrajstest@gmail.com', [recipient_email], fail_silently=False)
+    send_mail(subject, message, 'omkaartouristhome@gmail.com', [recipient_email], fail_silently=False)
 
     return render(request, 'cash_booking_confirmed.html')
 
