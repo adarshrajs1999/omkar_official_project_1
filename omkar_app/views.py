@@ -25,6 +25,7 @@ def book_couple_room(request):
             booking = form.save()  # Save the form data without committing to the database yet
 
             return redirect('view-booking-details', booking_id=booking.id, room_type='couple')
+
     else:
         form = CoupleRoomForm()
 

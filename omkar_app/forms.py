@@ -25,7 +25,7 @@ class CoupleRoomForm(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     # The clean method must be outside the Meta class
@@ -35,7 +35,8 @@ class CoupleRoomForm(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -56,7 +57,7 @@ class CoupleRoomFormAC(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     def clean(self):
@@ -65,7 +66,8 @@ class CoupleRoomFormAC(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -87,7 +89,7 @@ class FamilyRoomForm(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     # The clean method must be outside the Meta class
@@ -97,7 +99,8 @@ class FamilyRoomForm(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -116,7 +119,7 @@ class FamilyRoomFormAC(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     def clean(self):
@@ -125,7 +128,8 @@ class FamilyRoomFormAC(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -146,7 +150,7 @@ class GroupRoomForm(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     # Move the clean method outside the Meta class
@@ -157,8 +161,8 @@ class GroupRoomForm(forms.ModelForm):
 
         # Check if check-in and check-out dates are valid
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
-
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
         return cleaned_data
 
 class GroupRoomFormAC(forms.ModelForm):
@@ -176,7 +180,7 @@ class GroupRoomFormAC(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     def clean(self):
@@ -185,7 +189,8 @@ class GroupRoomFormAC(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -208,7 +213,7 @@ class SixBedRoomForm(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     def clean(self):
@@ -217,7 +222,8 @@ class SixBedRoomForm(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
@@ -239,7 +245,7 @@ class DormitoryForm(forms.ModelForm):
             'Phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
             'Email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email Address'}),
             'Adults': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Adults'}),
-            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children'}),
+            'Child': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Number of Children','value': 0}),
         }
 
     def clean(self):
@@ -248,7 +254,8 @@ class DormitoryForm(forms.ModelForm):
         check_out = cleaned_data.get('Check_out')
 
         if check_in and check_out and check_in >= check_out:
-            raise ValidationError('Check-out date must be after check-in date.')
+            # Instead of raising a ValidationError, add the error to the form
+            self.add_error('Check_out', 'Check-out date must be after check-in date.')
 
         return cleaned_data
 
