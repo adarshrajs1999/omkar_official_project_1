@@ -75,6 +75,41 @@
 
     }
 
+.carousel-item {
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+}
+
+.carousel-item img {
+    filter: brightness(0.9);
+    transition: transform 1.2s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+.carousel-item.tumble-effect:not(.active) {
+    opacity: 0;
+    transform: rotateY(60deg) scale(0.95);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 </style>
 
 </head>
