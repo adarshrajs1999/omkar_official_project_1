@@ -80,13 +80,36 @@
         .form-group .col-md-8 {
             flex-grow: 1;
         }
+
+         .btn-book-room {
+      background-color: orange;
+      color: #fff;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+       border-radius: 10px;
+    }
+
+    .btn-book-room:hover {
+      background-color: #D35400;
+      transform: scale(1.05);
+      color: #fff;
+    }
+
+    .btn-book-room:focus,
+    .btn-book-room:active {
+      box-shadow: 0 0 0 0.2rem rgba(161, 108, 73, 0.5);
+    }
+
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="booking-form">
-  <h1 style="font-family: 'Roboto', sans-serif;">BOOK COUPLE ROOM</h1>
+  <h1 style="font-family: 'Roboto', sans-serif;">BOOK SIX BED ROOM</h1>
 
             <form method="POST" novalidate>
                 {% csrf_token %}
@@ -169,7 +192,7 @@
                     <!-- Submit Button -->
                     <div class="row form-group">
                         <div class="col-md-12 text-center mt-4">
-                            <button type="submit" class="btn btn-custom btn-lg">Book Now</button>
+                            <button type="submit" class="btn btn-book-room">Book Now</button>
                         </div>
                     </div>
 
