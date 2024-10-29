@@ -110,6 +110,27 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.btn-book-room {
+      background-color: orange;
+      color: #fff;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .btn-book-room:hover {
+      background-color: #D35400;
+      transform: scale(1.05);
+      color: #fff;
+    }
+
+    .btn-book-room:focus,
+    .btn-book-room:active {
+      box-shadow: 0 0 0 0.2rem rgba(161, 108, 73, 0.5);
+    }
+
 </style>
 
 </head>
@@ -279,9 +300,10 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">COUPLE BED ROOM</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our beautifully appointed Couple bed room, designed for comfort and relaxation. This spacious room features a cozy double bed with premium bedding, ensuring a restful night's sleep for two guests.</p>
-                    <a href="{% url 'book_couple_room' %}" class="main_btn" style="padding: 10px 20px;  border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK NON-AC ROOM</a>
 
-                    <a href="{% url 'CoupleAC_Book' %}" class="main_btn" style="padding: 10px 20px;  border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK AC ROOM</a>
+  <a href="{% url 'book_couple_room' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK NON-AC ROOM</button></a>&nbsp;&nbsp;
+    <a href="{% url 'CoupleAC_Book' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK AC ROOM</button></a>
+
 
                 </div>
             </div>
@@ -319,8 +341,10 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">FAMILY BED ROOM</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious Family bed room, perfect for families, friends, or groups traveling together. This thoughtfully designed room provides ample space and comfort for up to three guests, ensuring a restful stay.</p>
-                    <a href="{% url 'book_Family_room' %}" class="main_btn" style="padding: 10px 20px;  border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK NON-AC ROOM</a>
-                    <a href="{% url 'FamilyAC_Book' %}" class="main_btn" style="padding: 10px 20px;  border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK AC ROOM</a>
+
+
+                      <a href="{% url 'book_Family_room' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK NON-AC ROOM</button></a>&nbsp;&nbsp;
+                      <a href="{% url 'FamilyAC_Book' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK AC ROOM</button></a>
 
                 </div>
             </div>
@@ -358,8 +382,10 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">GROUP BED ROOM</h2>
                     <p style="color: orange; font-weight: bold;">AC/Non AC</p>
                     <p style="color: #555;">Welcome to our spacious Group bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
-                    <a href="{% url 'book_Group_room' %}" class="main_btn" style="padding: 10px 20px;border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK NON-AC ROOM</a>
-                    <a href="{% url 'GroupAC_Book' %}" class="main_btn" style="padding: 10px 20px;   border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK AC ROOM</a>
+
+
+                      <a href="{% url 'book_Group_room' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK NON-AC ROOM</button></a>&nbsp;&nbsp;
+                      <a href="{% url 'GroupAC_Book' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK AC ROOM</button></a>
 
                 </div>
             </div>
@@ -397,7 +423,7 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">SIX BED ROOM</h2>
                     <p style="color: orange; font-weight: bold;">Non AC</p>
                     <p style="color: #555;">Welcome to our spacious six bed room, ideal for families, groups, or friends traveling together. Designed with comfort and convenience in mind, this room provides ample space for relaxation and rest, making it the perfect choice for your stay.</p>
-                    <a href="{% url 'book_Six_room' %}" class="main_btn" style="padding: 10px 20px;  border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
+                    <a href="{% url 'book_Six_room' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK YOUR ROOM</button></a>
                 </div>
             </div>
         </div>
@@ -434,7 +460,8 @@
                     <h2 class="type" style="font-size: 1.8em; font-weight: bold; color: #333;">DORMITORY</h2>
                     <p style="color: orange; font-weight: bold;">AC</p>
                     <p style="color: #555;">Welcome to our vibrant and welcoming dormitory, designed for budget travelers, students, or groups looking for affordable yet comfortable accommodations. Our dormitory offers a social atmosphere where guests can meet, share experiences, and make lasting memories.</p>
-                    <a href="{% url 'book_Dormitory' %}" class="main_btn" style="padding: 10px 20px;   border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; display: inline-block;">BOOK YOUR ROOM</a>
+
+                  <a href="{% url 'book_Dormitory' %}" style="text-decoration: none; color: white;"><button class="btn btn-book-room" style=" border: none;">BOOK YOUR ROOM</button></a>
 
                     <div class="dropdown" style="display: inline-block;">
 </div>
