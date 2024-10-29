@@ -258,7 +258,11 @@ def create_razorpay_order(request, booking_id, room_type):
         razorpay_order = razorpay_client.order.create({
             'amount': amount,
             'currency': 'INR',
-            'payment_capture': '1'
+            'payment_capture': '1',
+            'notes': {
+                'booking_id': booking_id,  # Include booking ID in notes
+                'room_type': room_type      # Include room type in notes
+            }
         })
         context = {
             'room': room,
@@ -266,7 +270,7 @@ def create_razorpay_order(request, booking_id, room_type):
             'razorpay_key': 'your_razorpay_key',  # Replace with your actual Razorpay key
             'amount': amount,
         }
-        return render(request, 'razorpay_payment.html' , context)
+        return render(request, 'razorpay_payment.html', context)
 
     return redirect('booking_failure')
 
@@ -287,9 +291,42 @@ def razorpay_payment_callback(request):
 
         try:
             razorpay_client.utility.verify_payment_signature(params_dict)
+
             # Payment successful
-            # Save the payment status and related booking info
+            # Retrieve the Razorpay order to get metadata
+            razorpay_order = razorpay_client.order.fetch(order_id)
+            booking_id = razorpay_order['notes']['booking_id']  # Extract booking ID
+            room_type = razorpay_order['notes']['room_type']     # Extract room type
+
+            # Fetch the booking details based on the booking ID
+            if room_type == 'couple':
+                booking = get_object_or_404(Couple_Room, id=booking_id)
+            elif room_type == 'family':
+                booking = get_object_or_404(Family_Room, id=booking_id)
+            elif room_type == 'group':
+                booking = get_object_or_404(Group_Room, id=booking_id)
+            elif room_type == 'sixbed':
+                booking = get_object_or_404(Six_Bed_Room, id=booking_id)
+            elif room_type == 'dormitory':
+                booking = get_object_or_404(Dormitory, id=booking_id)
+
+            # Prepare email content for successful payment
+            subject = f"Payment Confirmation for {room_type.capitalize()} Room"
+            message = (f'''
+                       Booking Details:
+                       Name: {booking.Name}
+                       Phone: {booking.Phone}
+                       Room Type: {room_type.capitalize()}
+                       Payment ID: {payment_id}
+                       ''')
+            recipient_email = 'omkaartouristhome@gmail.com'  # Your recipient email
+
+            # Send the email
+            send_mail(subject, message, 'omkaartouristhome@gmail.com', [recipient_email], fail_silently=False)
+
+            # Redirect to the success page
             return redirect('payment_success')
+
         except razorpay.errors.SignatureVerificationError:
             # Payment failed due to signature mismatch
             return redirect('payment_failure')
@@ -299,7 +336,6 @@ def payment_success(request):
 
 def payment_failure(request):
     return render(request, 'payment_failure.html')
-
 
 
 
