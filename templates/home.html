@@ -131,6 +131,34 @@
       box-shadow: 0 0 0 0.2rem rgba(161, 108, 73, 0.5);
     }
 
+
+        .orange-dropdown {
+    background-color: orange !important;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 2px 20px;
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+ .orange-dropdown:hover {
+      background-color: #D35400; !important;
+      transform: scale(1.05); !important;
+      color: black; !important;
+    }
+
+.orange-dropdown option {
+    background-color: orange !important;
+    color: black;
+}
+
+.orange-option {
+    color: black;
+    background-color: orange !important;
+}
+
+
 </style>
 
 </head>
@@ -175,22 +203,22 @@
                     <a class="nav-link" href="#contact" style="color: black; padding: 15px 20px; border-radius: 5px; font-size: 18px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'; this.style.color='black';" onmouseout="this.style.backgroundColor=''; this.style.color='black';">CONTACT</a>
                 </li>
                 <!-- Book Your Room Dropdown -->
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <form id="bookingForm" method="POST" novalidate>
-                            {% csrf_token %}
-                            <select id="options" onchange="scrollToDiv()" style=" color: black; font-weight: bold; border: none; padding: 12px 20px; border-radius: 30px; transition: box-shadow 0.3s ease;">
-                                <option value="" disabled selected style="color: black;">📅 BOOK YOUR ROOM</option>
-                                <option value="couple-room" style="color: black;">❤️ COUPLE ROOM</option>
-                                <option value="family-room" style="color: black;">👨‍👩‍👧 FAMILY ROOM</option>
-                                <option value="group-room" style="color: black;">👥 GROUP ROOM</option>
-                                <option value="six-room" style="color: black;">🛌 SIX BED ROOM</option>
-                                <option value="dormitory" style="color: black;">🏕️ DORMITORY</option>
-                            </select>
-                        </form>
-                    </div>
-                </li>
-<!--                drop down ends-->
+<li class="nav-item">
+    <div class="dropdown">
+        <form id="bookingForm" method="POST" novalidate>
+            {% csrf_token %}
+            <select id="options" class="orange-dropdown" onchange="scrollToDiv()" style="font-weight: bold; border: none; padding: 12px 20px; border-radius: 30px; transition: box-shadow 0.3s ease;">
+                <option value="" disabled selected class="orange-option">📅 BOOK YOUR ROOM</option>
+                <option value="couple-room" class="orange-option">❤️ COUPLE ROOM</option>
+                <option value="family-room" class="orange-option">👨‍👩‍👧 FAMILY ROOM</option>
+                <option value="group-room" class="orange-option">👥 GROUP ROOM</option>
+                <option value="six-room" class="orange-option">🛌 SIX BED ROOM</option>
+                <option value="dormitory" class="orange-option">🏕️ DORMITORY</option>
+            </select>
+        </form>
+    </div>
+</li>
+
             </ul>
         </div>
     </div>
