@@ -1,3 +1,6 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
 <!-- booking_success.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +31,7 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(30px);
         }
 
         .booking-success-message h1 {
@@ -71,6 +75,7 @@
             margin-top: 20px;
         }
          .btn-book-room {
+           white-space: nowrap;  /* Prevent text from wrapping */
       background-color: orange;
       color: #fff;
       border: none;
@@ -79,7 +84,8 @@
       font-weight: 600;
       padding: 0.8rem 1.5rem;
        border-radius: 10px;
-         width: 200px;
+         width: 250px;
+         text-align:center;
     }
 
     .btn-book-room:hover {
@@ -102,8 +108,8 @@
             <h1 style="font-family: 'Roboto', sans-serif;">Thank You for Booking with Us!</h1>
             <p>Your room has been successfully booked.</p>
 <div class="btn-container">
-    <a href="{% url 'cash_payment' booking_id=booking.id room_type=room_type %}" class="btn-book-room" style="text-decoration:none;">Go to Cash Payment</a> &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="{% url 'create_razorpay_order' booking_id=booking.id room_type=room_type %}" class="btn-book-room" style="text-decoration:none;">Go to Online Payment</a>
+    <a href="{% url 'cash_payment' booking_id=booking.id room_type=room_type %}" class="btn-book-room" style="text-decoration:none;">GO TO CASH PAYMENT</a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'create_razorpay_order' booking_id=booking.id room_type=room_type %}" class="btn-book-room" style="text-decoration:none;">GO TO ONLINE PAYMENT</a>
 </div>
 
 
@@ -116,3 +122,4 @@
 </body>
 
 </html>
+{% endblock %}

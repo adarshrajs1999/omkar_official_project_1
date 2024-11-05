@@ -1,3 +1,6 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
 <!doctype html>
 <html lang="en">
 {% load static %}
@@ -33,6 +36,7 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(30px);
         }
 
         .payment-success-message h2 {
@@ -96,6 +100,7 @@
     .btn-book-room:focus,
     .btn-book-room:active {
       box-shadow: 0 0 0 0.2rem rgba(161, 108, 73, 0.5);
+
     }
 
     </style>
@@ -119,3 +124,4 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeo62BHVRPMLmSE4ujG6lKGVz5lG8zlQ6VmrpQblTUXRmU0w" crossorigin="anonymous"></script>
 </body>
 </html>
+{% endblock %}

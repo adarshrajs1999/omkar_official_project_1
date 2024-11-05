@@ -1,5 +1,9 @@
-<!DOCTYPE html>
+{% extends 'home.html' %}
 {% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -28,6 +32,7 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(30px);
         }
 
         .booking-form h1 {
@@ -105,15 +110,12 @@
 
     </style>
 
-       <!-- Script for dynamic price change -->
-
-
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="booking-form">
+    <div class="container" style="margin-top:5px;">
+        <div class="booking-form" >
             <h1 style="font-family: 'Roboto', sans-serif;">BOOK COUPLE ROOM</h1> <!-- Updated heading -->
             <form method="POST" novalidate>
                 {% csrf_token %}
@@ -238,3 +240,4 @@
 </body>
 
 </html>
+{% endblock %}

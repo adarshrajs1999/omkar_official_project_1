@@ -1,5 +1,7 @@
 <!-- templates/booking/check_availability.html -->
-
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +35,10 @@
             max-width: 600px;
             margin: 100px auto;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+            background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(30px);
         }
 
         .booking-success-message h1 {
@@ -61,13 +64,16 @@
             font-size: 1.1rem;
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            width: 200px;
+            width: 250px;
             text-align: center;
+             white-space: nowrap;  /* Prevent text from wrapping */
+             text-align:center;
         }
 
         .btn-custom:hover {
             background-color: #D35400;
             transform: scale(1.05);
+            color:white;
         }
 
         .btn-custom:focus,
@@ -99,3 +105,4 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeo62BHVRPMLmSE4ujG6lKGVz5lG8zlQ6VmrpQblTUXRmU0w" crossorigin="anonymous"></script>
 </body>
 </html>
+{% endblock %}

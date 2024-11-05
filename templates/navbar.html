@@ -1,0 +1,190 @@
+ <style>
+    /* Media query for smaller screens */
+    @media (max-width: 991px) {
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav {
+            display: block;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-bottom: 10px;
+
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+        .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+    }
+
+.carousel-item {
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+}
+
+.carousel-item img {
+    filter: brightness(0.9);
+    transition: transform 1.2s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+.carousel-item.tumble-effect:not(.active) {
+    opacity: 0;
+    transform: rotateY(60deg) scale(0.95);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-book-room {
+      background-color: orange;
+      color: #fff;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .btn-book-room:hover {
+      background-color: #D35400;
+      transform: scale(1.05);
+      color: #fff;
+    }
+
+    .btn-book-room:focus,
+    .btn-book-room:active {
+      box-shadow: 0 0 0 0.2rem rgba(161, 108, 73, 0.5);
+    }
+
+
+        .orange-dropdown {
+    background-color: orange !important;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 2px 20px;
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+ .orange-dropdown:hover {
+      background-color: #D35400; !important;
+      transform: scale(1.05); !important;
+      color: black; !important;
+    }
+
+.orange-dropdown option {
+    background-color: orange !important;
+    color: black;
+}
+
+.orange-option {
+    color: black;
+    background-color: orange !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+</style>
+
+<!-- Navbar starts -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #fff; height: 100px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand logo_h" href="index.html">
+            <img src="/static/img/logo.png" alt="Logo" style="height: 80px; max-height: 80px;" />
+        </a>
+
+        <!-- Toggler Button for Mobile View -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+            <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3E%3Cpath stroke=%27rgba(0, 0, 0, 1)%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E'); background-size: 30px 30px;"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto d-flex align-items-center" style="display: flex; align-items: center; margin-left: auto;">
+                <!-- Home -->
+                <li class="nav-item active" style="margin-right: 15px;">
+                    <a class="nav-link" href="#" style="color: black; padding: 15px 20px; border-radius: 5px; font-size: 18px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'; this.style.color='black';" onmouseout="this.style.backgroundColor=''; this.style.color='black';">HOME</a>
+                </li>
+                <!-- Rooms -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#rooms" style="color: black; padding: 15px 20px; border-radius: 5px; font-size: 18px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'; this.style.color='black';" onmouseout="this.style.backgroundColor=''; this.style.color='black';">ROOMS</a>
+                </li>
+                <!-- Hotspots -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#hotspots" style="color: black; padding: 15px 20px; border-radius: 5px; font-size: 18px; font-weight: bold; transition: background-color 0.3s ease;white-space: nowrap;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'; this.style.color='black';" onmouseout="this.style.backgroundColor=''; this.style.color='black';">HOTSPOTS NEARBY</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item" style="margin-right: 15px;">
+                    <a class="nav-link" href="#contact" style="color: black; padding: 15px 20px; border-radius: 5px; font-size: 18px; font-weight: bold; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'; this.style.color='black';" onmouseout="this.style.backgroundColor=''; this.style.color='black';">CONTACT</a>
+                </li>
+                <!-- Book Your Room Dropdown -->
+<li class="nav-item">
+    <div class="dropdown">
+        <form id="bookingForm" method="POST" novalidate>
+            {% csrf_token %}
+            <select id="options" class="orange-dropdown" onchange="scrollToDiv()" style="font-weight: bold; border: none; padding: 12px 20px; border-radius: 30px; transition: box-shadow 0.3s ease;">
+                <option value="" disabled selected class="orange-option">📅 BOOK YOUR ROOM</option>
+                <option value="couple-room" class="orange-option">❤️ COUPLE ROOM</option>
+                <option value="family-room" class="orange-option">👨‍👩‍👧 FAMILY ROOM</option>
+                <option value="group-room" class="orange-option">👥 GROUP ROOM</option>
+                <option value="six-room" class="orange-option">🛌 SIX BED ROOM</option>
+                <option value="dormitory" class="orange-option">🏕️ DORMITORY</option>
+            </select>
+        </form>
+    </div>
+</li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar ends -->
