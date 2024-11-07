@@ -72,8 +72,14 @@ body {
     border-radius: 5px;
     outline: none;               /* Remove outline */
     margin-right: 10px;
-    background-color: orange;  /* Background color */
+    background-color: orange;   /* Background color */
     transition: all 0.3s ease;   /* Optional: smooth transition for hover effects */
+}
+
+/* Prevent the focus outline from appearing */
+.navbar-toggler:focus {
+    box-shadow: none;  /* Remove any box-shadow on focus */
+    border-color: orange; /* Ensure border color remains consistent */
 }
 
 
