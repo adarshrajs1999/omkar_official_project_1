@@ -284,7 +284,7 @@ body {
 }
 
 /* Responsive heading styling */
-.responsive-heading {
+.responsive-heading overlay{
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
@@ -304,7 +304,7 @@ body {
 
 /* Sub-heading */
 .sub-heading {
-    font-size: 2em;
+    font-size: 3em;
     font-family: 'Futura', sans-serif !important;
     color: #fff;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
@@ -337,6 +337,28 @@ body {
     }
     .sub-heading {
         font-size: 1.2em;
+    }
+}
+/* Default Centering (for desktop and large screens) */
+.responsive-heading {
+    text-align: center;
+    /* Ensure the content is vertically and horizontally centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile specific adjustments (for smaller screens) */
+@media screen and (max-width: 768px) {
+    .responsive-heading {
+        text-align: center;
+        /* Ensure it’s centered on mobile */
+        padding: 0 10px;  /* Optional: Adds padding to prevent the text from touching the edges */
+    }
+
+    .main-heading, .sub-heading {
+        font-size: 1.5rem; /* Optional: Adjust font size on mobile */
     }
 }
 
