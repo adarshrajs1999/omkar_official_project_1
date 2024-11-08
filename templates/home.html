@@ -32,6 +32,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <style>
+
+
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futurab.TTF') format('truetype'),
+         url('fonts/futurabi.TTF') format('truetype'),
+         url('fonts/futuram.TTF') format('truetype'),
+         url('fonts/futurami.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 /* Base styling */
 body {
     font-family: Arial, sans-serif;
@@ -281,17 +295,17 @@ body {
 /* Main heading */
 .main-heading {
     font-size: 5em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif !important;
     color: #fff;
     text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s, color 0.3s;
-    margin: 0;
+    margin-left: 0;
 }
 
 /* Sub-heading */
 .sub-heading {
     font-size: 2em;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Futura', sans-serif !important;
     color: #fff;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, color 0.3s;
@@ -342,7 +356,7 @@ body {
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand logo_h" href="{% url 'home' %}" >
-            <img src="/static/img/logo.png" alt="Logo" style="height: 80px; max-height: 80px;" />
+            <img src="/static/img/logo.png" alt="Logo" style="margin-left:10px;height: 80px; max-height: 80px;" />
         </a>
 
       <!-- Using Bootstrap Icons for a more stylized button -->
