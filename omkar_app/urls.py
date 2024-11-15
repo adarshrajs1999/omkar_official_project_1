@@ -17,11 +17,11 @@ urlpatterns = [
     path('razorpay-callback/', views.razorpay_payment_callback, name='razorpay_payment_callback'),
     path('payment_success/',views.payment_success,name='payment_success'),
     path('payment_failure/',views.payment_failure,name='payment_failure'),
-
-
     path('CoupleAC_Book/',views.CoupleAC_Book,name='CoupleAC_Book'),
     path('GroupAC_Book/', views.GroupAC_Book, name='GroupAC_Book'),
     path('FamilyAC_Book/', views.FamilyAC_Book, name='FamilyAC_Book'),
+    path('terms_and_conditions/',views.terms_and_conditions,name='terms_and_conditions')
+
 
 ]
 

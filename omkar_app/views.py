@@ -337,6 +337,7 @@ def payment_success(request):
 def payment_failure(request):
     return render(request, 'payment_failure.html')
 
-
+def terms_and_conditions(request):
+    return render(request,'terms_conditions.html')
 
 
