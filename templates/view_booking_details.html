@@ -105,8 +105,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="booking-details">
+    <div class="container" >
+        <div class="booking-details" style="margin-bottom:200px !important;">
             <h2 style="font-family: 'Roboto', sans-serif;">BOOKING DETAILS</h2>
             <table class="table">
                 <tr>
@@ -150,8 +150,8 @@
             <div class="btn-group">
                 <form method="POST">
                     {% csrf_token %}
-                    <button type="submit" name="ok" class="btn btn-book-room">OK</button>
-                    <button type="submit" name="cancel" class="btn btn-book-room">CANCEL</button>
+                    <button type="submit" name="ok" class="btn btn-book-room" style="margin-right:10px !important;">OK</button>
+                    <button type="submit" name="cancel" class="btn btn-book-room" >CANCEL</button>
                 </form>
             </div>
         </div>
