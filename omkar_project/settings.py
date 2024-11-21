@@ -100,6 +100,11 @@ DATABASES = {
 }
 
 
+# for generating database backup run the below command
+# pg_dump -U postgres -d omkar_official_project_1_database -F c -b -v -f backup_file_name.dump
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -154,7 +159,7 @@ RAZORPAY_KEY_SECRET = '88R5YlFjzaAR26XSezTHbvFH'
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
-# settings.py
+
 # settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
