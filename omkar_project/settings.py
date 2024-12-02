@@ -166,7 +166,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omkaartouristhome@gmail.com'  # Replace with your Gmail address
-EMAIL_HOST_PASSWORD = 'vjsp aynv zsvp ojhb'  # Replace with your Gmail password
+EMAIL_HOST_PASSWORD = 'yonf dnqi ivym dcbq'  # Replace with your Gmail password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
